@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Recipe_Keeper.Classes;
 using Recipe_Keeper.Database;
 
 namespace Recipe_Keeper
@@ -21,6 +23,14 @@ namespace Recipe_Keeper
             {
                 string dbPath = Path.Combine(FileSystem.AppDataDirectory, "rkmaDB.db3");
                 return new DatabaseService(dbPath);
+            });
+
+            //Add UserSession to the DI container.
+            builder.Services.AddSingleton<UserSession>(s =>
+            {
+                bool IsLoggedIn = false;
+                DatabaseService databaseService = s.GetService<DatabaseService>();
+                return new UserSession(IsLoggedIn, databaseService);
             });
 
 #if DEBUG
