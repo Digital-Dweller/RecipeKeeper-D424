@@ -1,15 +1,21 @@
-﻿namespace Recipe_Keeper
+﻿using Recipe_Keeper.Pages;
+
+namespace Recipe_Keeper
 {
     public partial class App : Application
     {
-        public App()
+        private IServiceProvider ServiceProvider;
+        public App(IServiceProvider serviceProvider)
         {
             InitializeComponent();
+            ServiceProvider = serviceProvider;
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            var landingPage = ServiceProvider.GetService<LandingPage>();
+            var nav_landingPage = new NavigationPage(landingPage);
+            return new Window(nav_landingPage);
         }
     }
 }

@@ -2,11 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Recipe_Keeper.Pages.LandingPage"
-             Title="LandingPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="LandingPage"
+             NavigationPage.HasNavigationBar="False">
+    <Grid BackgroundColor="#F7F3E4">
+        <VerticalStackLayout VerticalOptions="Center">
+            <Image
+                Source="logo.png"
+                WidthRequest="150"
+                HeightRequest="150"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+            <Label
+                Text="Recipe Keeper"
+                FontSize="36"
+                TextColor="#9E3F41"
+                HorizontalOptions="Center"
+                Margin="0,0,0,100"/>
+            <Button
+                HorizontalOptions="Center"
+                Text="Create Profile"
+                FontSize="20"
+                TextColor="Black"
+                BackgroundColor="White"
+                BorderWidth="1"
+                BorderColor="Black"
+                Margin="0,0,0,160"/>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

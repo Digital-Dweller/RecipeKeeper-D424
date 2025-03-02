@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Recipe_Keeper.Classes;
 using Recipe_Keeper.Database;
+using Recipe_Keeper.Pages;
 
 namespace Recipe_Keeper
 {
@@ -32,6 +33,10 @@ namespace Recipe_Keeper
                 DatabaseService databaseService = s.GetService<DatabaseService>();
                 return new UserSession(IsLoggedIn, databaseService);
             });
+
+            //Add all the pages to the DI container.
+            builder.Services.AddTransient<LandingPage>();
+            builder.Services.AddTransient<Login>();
 
 #if DEBUG
             builder.Logging.AddDebug();
