@@ -4,7 +4,7 @@
              x:Class="Recipe_Keeper.Pages.LandingPage"
              Title="LandingPage"
              NavigationPage.HasNavigationBar="False">
-    <Grid BackgroundColor="#F7F3E4">
+    <Grid BackgroundColor="#fdf9f3">
         <VerticalStackLayout VerticalOptions="Center">
             <Image
                 Source="logo.png"
@@ -19,13 +19,14 @@
                 HorizontalOptions="Center"
                 Margin="0,0,0,100"/>
             <Button
-                HorizontalOptions="Center"
                 Text="Create Profile"
+                Clicked="onClick_CreateProfile"
                 FontSize="20"
                 TextColor="Black"
                 BackgroundColor="White"
                 BorderWidth="1"
                 BorderColor="Black"
+                HorizontalOptions="Center"
                 Margin="0,0,0,160"/>
         </VerticalStackLayout>
     </Grid>

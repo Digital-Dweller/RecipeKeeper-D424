@@ -8,6 +8,12 @@
     <DefaultDevice>pixel_7_-_api_35_1</DefaultDevice>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="Controls\TextInput.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\CreateProfile.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\LandingPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
