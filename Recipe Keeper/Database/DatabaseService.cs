@@ -26,6 +26,9 @@ namespace Recipe_Keeper.Database
                 Console.WriteLine(ex.Message);
             }
         }
-
+        private async Task CreateDefaultTables()
+        {
+            
+        }
     }
 }

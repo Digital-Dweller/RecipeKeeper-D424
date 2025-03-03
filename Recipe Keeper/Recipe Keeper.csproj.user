@@ -14,6 +14,9 @@
     <MauiXaml Update="Pages\CreateProfile.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\Favorites.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\LandingPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
