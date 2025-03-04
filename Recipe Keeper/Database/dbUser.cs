@@ -7,12 +7,35 @@ using SQLite;
 
 namespace Recipe_Keeper.Database
 {
-    internal class dbUser
+    public class dbUser
     {
         [PrimaryKey, AutoIncrement]
-        required public int Id { get; set; }
-        required public string Username { get; set; }
-        required public string Password { get; set; }
-        required public string Email { get; set; }
+        public int id { get; private set; }
+        private string username;
+        private string password;
+        private string email;
+        public dbUser(){}
+        public dbUser(string username, string email, string password)
+        {
+            Username = username;
+            Email = email;
+            Password = password;
+        }
+        //Getters and setters with encapsulation support.
+        public string Username
+        {
+            get { return username; }
+            private set { username = value; }
+        }
+        public string Password
+        {
+            get { return password; }
+            private set { password = value; }
+        }
+        public string Email
+        {
+            get { return email; }
+            private set { email = value; }
+        }
     }
 }

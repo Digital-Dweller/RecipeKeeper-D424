@@ -10,11 +10,11 @@ namespace Recipe_Keeper.Database
     internal class dbIngredient
     {
         [PrimaryKey, AutoIncrement]
-        required public int Id { get; set; }
-        required public string Title { get; set; }
-        required public double Quantity { get; set; }
-        required public int UnitId { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public double Quantity { get; set; }
+        public int UnitId { get; set; }
         [Indexed]
-        required public int RecipeId { get; set; }
+        public int RecipeId { get; set; }
     }
 }

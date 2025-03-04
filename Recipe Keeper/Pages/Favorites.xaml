@@ -4,7 +4,8 @@
              x:Class="Recipe_Keeper.Pages.Favorites"
              Title="Favorites">
     <VerticalStackLayout>
-        <Label 
+        <Label
+            x:Name="testTitle"
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />

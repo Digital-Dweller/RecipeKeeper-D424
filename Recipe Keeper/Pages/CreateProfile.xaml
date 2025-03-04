@@ -36,10 +36,10 @@
                 TextColor="#9E3F41"
                 HorizontalOptions="Center"
                 Margin="0,50,0,8"/>
-            <controls:TextInput Title="Username" Placeholder="Username..."/>
+            <controls:TextInput Title="Username" Placeholder="Username..." x:Name="input_Username"/>
             <controls:TextInput Title="Password" Placeholder="Password..." x:Name="input_Pass"/>
             <controls:TextInput Title="Confirm Password" Placeholder="Password..." x:Name="input_ConfirmPass"/>
-            <controls:TextInput Title="Email" Placeholder="Email..."/>
+            <controls:TextInput Title="Email" Placeholder="Email..." x:Name="input_Email"/>
             <Grid HorizontalOptions="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -47,6 +47,7 @@
                 </Grid.ColumnDefinitions>
                 <Button 
                     Text="Create"
+                    Clicked="onClick_Create"
                     FontSize="18"
                     TextColor="Black"
                     BackgroundColor="White"

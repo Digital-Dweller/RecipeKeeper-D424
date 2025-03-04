@@ -10,7 +10,7 @@ namespace Recipe_Keeper.Database
     internal class dbUnit
     {
         [PrimaryKey, AutoIncrement]
-        required public int Id { get; set; }
-        required public string Title { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
     }
 }

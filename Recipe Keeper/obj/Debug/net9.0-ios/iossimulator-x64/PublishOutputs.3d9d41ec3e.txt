@@ -1,0 +1,1 @@
+C:\Users\Alex\Desktop\School\D424\RKMA\Recipe Keeper\bin\Debug\net9.0-ios\iossimulator-x64\publish\Recipe Keeper.deps.json

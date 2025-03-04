@@ -7,16 +7,26 @@ using Recipe_Keeper.Database;
 
 namespace Recipe_Keeper.Classes
 {
-    internal class UserSession
+    public class UserSession
     {
-        public int ID { get; set; }
-        public string Username { get; set; }
-        public bool IsLoggedIn { get; set; }
-        private DatabaseService databaseService { get; set; }
-        public UserSession(bool IsLoggedIn, DatabaseService databaseService)
+        public int id { get; private set; }
+        public string username { get; private set; }
+        public bool IsLoggedIn { get; private set; }
+        public UserSession()
         {
-            this.IsLoggedIn = IsLoggedIn;
-            this.databaseService = databaseService;
+            Logout();
+        }
+        public void Login(dbUser user)
+        {
+            this.id = user.id;
+            this.username = user.Username;
+            IsLoggedIn = true;
+        }
+        public void Logout()
+        {
+            this.id = 0;
+            this.username = string.Empty;
+            IsLoggedIn = false;
         }
     }
 }
