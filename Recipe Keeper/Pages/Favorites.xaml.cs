@@ -11,11 +11,11 @@ public partial class Favorites : ContentPage
     public Favorites(IServiceProvider serviceProvider, UserSession userSession)
 	{
 		InitializeComponent();
+        ServiceProvider = serviceProvider;
         this.userSession = userSession;
     }
     protected override async void OnAppearing()
 	{
         base.OnAppearing();
-        testTitle.Text = userSession.username;
     }
 }

@@ -10,7 +10,7 @@ namespace Recipe_Keeper.Database
     public class dbUser
     {
         [PrimaryKey, AutoIncrement]
-        public int id { get; private set; }
+        public int id { get; set; }
         private string username;
         private string password;
         private string email;
@@ -25,17 +25,17 @@ namespace Recipe_Keeper.Database
         public string Username
         {
             get { return username; }
-            private set { username = value; }
+            set { username = value; }
         }
         public string Password
         {
             get { return password; }
-            private set { password = value; }
+            set { password = value; }
         }
         public string Email
         {
             get { return email; }
-            private set { email = value; }
+            set { email = value; }
         }
     }
 }

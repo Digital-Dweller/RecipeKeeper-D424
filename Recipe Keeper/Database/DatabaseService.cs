@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 using Recipe_Keeper.Database;
+using static System.Runtime.InteropServices.Marshalling.IIUnknownCacheStrategy;
 
 namespace Recipe_Keeper.Database
 {
@@ -21,10 +22,16 @@ namespace Recipe_Keeper.Database
                 dbConnection = new SQLiteAsyncConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);
                 //Enable foreign key relationships on the database.
                 dbConnection.ExecuteAsync("PRAGMA foreign_keys = ON;").Wait();
+
+                if (dbConnection == null)
+                {
+                    throw new InvalidOperationException("Failed to initialize the database connection.");
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                throw;
             }
         }
         public DatabaseService()
@@ -39,10 +46,9 @@ namespace Recipe_Keeper.Database
         //Check if user exists.
         public async Task<bool> IsUser(string username)
         {
-            dbUser targetUser = await dbConnection.Table<dbUser>().Where(u => u.Username == username).FirstOrDefaultAsync();
-            if (targetUser == null) { return false; }
-            else { return true; }
-
+            var targetUser = await dbConnection.Table<dbUser>().Where(u => u.Username == username).FirstOrDefaultAsync();
+            if (targetUser != null) { return true; }
+            else { return false; }
         }
 
         public async Task<dbUser> GetUserFromUsername(string username)
@@ -71,6 +77,7 @@ namespace Recipe_Keeper.Database
                 tableCount += await dbConnection.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='dbRecipe';");
                 tableCount += await dbConnection.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='dbUnit';");
                 tableCount += await dbConnection.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='dbUser';");
+
                 return tableCount == 0;
             }
             catch (Exception ex)
@@ -79,5 +86,7 @@ namespace Recipe_Keeper.Database
                 return false;
             }
         }
-    }
+
+    }    
+
 }
