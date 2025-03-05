@@ -66,10 +66,28 @@ namespace Recipe_Keeper.Database
             await dbConnection.CreateTableAsync<dbUnit>();
             await dbConnection.CreateTableAsync<dbUser>();
         }
+
+        //Check if there are any users in the database.
+        public async Task<bool> dbUser_isEmptyAsync()
+        {
+            try
+            {
+                var userCount = await dbConnection.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM dbUser;");
+                Console.WriteLine( "Usercount is:" + userCount );
+                if (userCount == 0)
+                { return true; }
+                else { return false; }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
         //Check if the database is empty.
         public async Task<bool> Database_isEmptyAsync()
         {
-            Console.WriteLine("Checking if database is empty");
             try
             {
                 var tableCount = await dbConnection.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='dbDirection';");
