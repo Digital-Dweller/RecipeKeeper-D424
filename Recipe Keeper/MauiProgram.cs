@@ -43,6 +43,8 @@ namespace Recipe_Keeper
             //Add controls to the DI container.
             builder.Services.AddTransient<TextInput>();
             builder.Services.AddTransient<NavIcon>();
+            builder.Services.AddTransient<UiNavButton>();
+
 
 
 

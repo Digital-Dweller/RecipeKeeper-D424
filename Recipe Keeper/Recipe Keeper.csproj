@@ -73,6 +73,9 @@
 	  <MauiXaml Update="Controls\TextInput.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Controls\UiNavButton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\CreateProfile.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

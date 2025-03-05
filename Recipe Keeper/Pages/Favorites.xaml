@@ -38,11 +38,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <controls:NavIcon Grid.Row="0" Title="Favorites" imgSource="favorites_empty.svg" bgColor="#FDF9F3" edgeCoverWidth="4"/>
-            <controls:NavIcon Grid.Row="1" Title="Recipes" imgSource="recipes_empty.svg" bgColor="#D8BD9F" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="2" Title="Create" imgSource="create.svg" bgColor="#D8BD9F" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="3" Title="Search" imgSource="search.svg" bgColor="#D8BD9F" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="4" Title="Profile" imgSource="profile_empty.svg" bgColor="#D8BD9F" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="0" Title="Favorites" imgSource="favorites_filled.svg" bgColor="#FDF9F3" edgeCoverWidth="4"/>
+            <controls:NavIcon Grid.Row="1" Title="Recipes" imgSource="recipes_filled.svg" bgColor="#f0e4c7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="2" Title="Create" imgSource="create.svg" bgColor="#f0e4c7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="3" Title="Search" imgSource="search.svg" bgColor="#f0e4c7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="4" Title="Profile" imgSource="profile_filled.svg" bgColor="#f0e4c7" edgeCoverWidth="0"/>
 
             <Grid Grid.Column="1" Grid.RowSpan="5">
                 <Grid.RowDefinitions>
@@ -53,7 +53,7 @@
                 <BoxView 
                     BackgroundColor="Black" 
                     HeightRequest="3"
-                    Margin="-2,0,0,0"/>
+                    Margin="-2,.5,0,0"/>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -67,8 +67,12 @@
             </Grid>
         </Grid>
 
-        <HorizontalStackLayout>
-            
-        </HorizontalStackLayout>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <controls:UiNavButton Grid.Column="0" Title="Logout" Source="logout.svg" HorizontalOptions="Start"/>
+            <controls:UiNavButton Grid.Column="0" Title="Home" Source="home.svg"/>
+        </Grid>
     </Grid>
 </ContentPage>

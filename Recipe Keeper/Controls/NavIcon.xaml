@@ -30,7 +30,7 @@
             WidthRequest="{Binding edgeCoverWidth}"
             HorizontalOptions="End"
             VerticalOptions="Fill"
-            Margin="0,4,0,4"/>
+            Margin="0,3.7,0,3.7"/>
 
     </Grid>
 </ContentView>
