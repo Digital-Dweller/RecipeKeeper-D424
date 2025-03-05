@@ -40,6 +40,8 @@ namespace Recipe_Keeper
             builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CreateProfile>();
             builder.Services.AddTransient<Favorites>();
+            builder.Services.AddTransient<CreateRecipe>();
+
             //Add controls to the DI container.
             builder.Services.AddTransient<TextInput>();
             builder.Services.AddTransient<NavIcon>();

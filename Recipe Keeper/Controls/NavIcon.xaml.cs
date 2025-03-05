@@ -29,9 +29,16 @@ public partial class NavIcon : ContentView
         get => (string)GetValue(EdgeCoverWidthProperty);
         set => SetValue(EdgeCoverWidthProperty, value);
     }
+
+    public event EventHandler Tapped;
     public NavIcon()
 	{
 		InitializeComponent();
         BindingContext = this;
+
+        //Add tap gesture to the control.
+        var tapGesture = new TapGestureRecognizer();
+        tapGesture.Tapped += (s, e) => Tapped?.Invoke(this, EventArgs.Empty);
+        GestureRecognizers.Add(tapGesture);
     }
 }

@@ -18,4 +18,11 @@ public partial class Favorites : ContentPage
 	{
         base.OnAppearing();
     }
+
+    private async void onClick_CreateRecipe(object sender, EventArgs e)
+    {
+        var createRecipe_page = ServiceProvider.GetService<CreateRecipe>();
+        await Application.Current.MainPage.Navigation.PushAsync(createRecipe_page);
+    }
+
 }

@@ -64,6 +64,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Create
 build_metadata.AdditionalFiles.TargetPath = Pages\CreateProfile.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\CreateProfile.xaml
 
+[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/CreateRecipe.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.CreateRecipe.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\CreateRecipe.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\CreateRecipe.xaml
+
 [C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Favorites.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Favorites.xaml

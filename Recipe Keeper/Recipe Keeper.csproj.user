@@ -20,6 +20,9 @@
     <MauiXaml Update="Pages\CreateProfile.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\CreateRecipe.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\Favorites.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

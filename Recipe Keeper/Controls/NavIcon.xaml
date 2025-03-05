@@ -4,7 +4,7 @@
              x:Class="Recipe_Keeper.Controls.NavIcon">
     <Grid>
         <Border 
-            x:Name="border" 
+            x:Name="border"
             Stroke="Black" 
             StrokeThickness="3"
             BackgroundColor="{Binding bgColor}"

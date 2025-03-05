@@ -39,10 +39,10 @@
             </Grid.ColumnDefinitions>
 
             <controls:NavIcon Grid.Row="0" Title="Favorites" imgSource="favorites_filled.svg" bgColor="#FDF9F3" edgeCoverWidth="4"/>
-            <controls:NavIcon Grid.Row="1" Title="Recipes" imgSource="recipes_filled.svg" bgColor="#f0e4c7" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="2" Title="Create" imgSource="create.svg" bgColor="#f0e4c7" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="3" Title="Search" imgSource="search.svg" bgColor="#f0e4c7" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="4" Title="Profile" imgSource="profile_filled.svg" bgColor="#f0e4c7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="1" Title="Recipes" imgSource="recipes_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="2" Title="Create" Tapped="onClick_CreateRecipe" imgSource="create.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="3" Title="Search" imgSource="search.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="4" Title="Profile" imgSource="profile_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
 
             <Grid Grid.Column="1" Grid.RowSpan="5">
                 <Grid.RowDefinitions>
