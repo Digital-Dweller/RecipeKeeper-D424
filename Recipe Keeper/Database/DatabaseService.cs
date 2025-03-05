@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 using Recipe_Keeper.Database;
-using static System.Runtime.InteropServices.Marshalling.IIUnknownCacheStrategy;
 
 namespace Recipe_Keeper.Database
 {
@@ -36,6 +35,14 @@ namespace Recipe_Keeper.Database
         }
         public DatabaseService()
         { }
+
+        //Try to login with the provided credentials.
+        public async Task<bool> UserLogin(string username, string passHash)
+        {
+            dbUser targetUser = await GetUserFromUsername(username);
+            return passHash == targetUser.Password;
+        }
+
 
         //Add a new user to the database.
         public async Task AddUser(dbUser newUser)

@@ -7,18 +7,21 @@ namespace Recipe_Keeper
     public partial class App : Application
     {
         private IServiceProvider ServiceProvider;
+        private readonly DatabaseService databaseService;
 
-        public App(IServiceProvider serviceProvider)
+
+        public App(IServiceProvider serviceProvider, DatabaseService databaseService)
         {
             InitializeComponent();
             ServiceProvider = serviceProvider;
+            this.databaseService = databaseService;
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            var landingPage = ServiceProvider.GetService<LandingPage>();
-            var nav_landingPage = new NavigationPage(landingPage);
-            return new Window(nav_landingPage);
+            var loadingPage = ServiceProvider.GetService<Loading>();
+            var nav_loadingPage = new NavigationPage(loadingPage);
+            return new Window(nav_loadingPage);
         }
     }
 }

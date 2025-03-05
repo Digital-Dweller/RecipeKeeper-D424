@@ -34,6 +34,8 @@ namespace Recipe_Keeper
             });
 
             //Add pages to the DI container.
+
+            builder.Services.AddTransient<Loading>();
             builder.Services.AddTransient<LandingPage>();
             builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CreateProfile>();

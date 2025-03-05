@@ -60,6 +60,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Landin
 build_metadata.AdditionalFiles.TargetPath = Pages\LandingPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\LandingPage.xaml
 
+[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Loading.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Loading.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Loading.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Loading.xaml
+
 [C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Login.xaml
