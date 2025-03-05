@@ -40,6 +40,7 @@ namespace Recipe_Keeper.Database
         public async Task<bool> UserLogin(string username, string passHash)
         {
             dbUser targetUser = await GetUserFromUsername(username);
+            Console.WriteLine($"Comparing password hashes input:{passHash} target:{targetUser.Password}");
             return passHash == targetUser.Password;
         }
 

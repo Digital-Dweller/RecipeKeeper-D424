@@ -39,6 +39,7 @@ public partial class Login : ContentPage
                 var favorites_page = ServiceProvider.GetService<Favorites>();
                 await Application.Current.MainPage.Navigation.PushAsync(favorites_page);
             }
+            else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
         }
         else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
     }

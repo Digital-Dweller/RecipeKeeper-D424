@@ -16,7 +16,7 @@ namespace Recipe_Keeper.Classes
         {
             Logout();
         }
-        public void Login(dbUser user)
+        public async Task Login(dbUser user)
         {
             this.id = user.id;
             this.username = user.Username;

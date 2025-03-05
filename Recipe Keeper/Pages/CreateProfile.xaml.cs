@@ -38,7 +38,7 @@ public partial class CreateProfile : ContentPage
                 {
                     Console.WriteLine("Hashing password.");
                     string passHash = PasswordHandler.HashPassword(input_Pass.InnerEntry.Text);
-                    dbUser newUser = new dbUser(input_Username.InnerEntry.Text, passHash, input_Email.InnerEntry.Text);
+                    dbUser newUser = new dbUser(input_Username.InnerEntry.Text, input_Email.InnerEntry.Text, passHash);
                     Console.WriteLine("Adding new user to database.");
                     await databaseService.AddUser(newUser);
                     dbUser addedUser = await databaseService.GetUserFromUsername(input_Username.InnerEntry.Text);
