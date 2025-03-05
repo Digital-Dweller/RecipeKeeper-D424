@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 using Recipe_Keeper.Database;
+using Recipe_Keeper.Classes.Utilities;
 
 namespace Recipe_Keeper.Database
 {
@@ -37,11 +38,12 @@ namespace Recipe_Keeper.Database
         { }
 
         //Try to login with the provided credentials.
-        public async Task<bool> UserLogin(string username, string passHash)
+        public async Task<bool> UserLogin(string username, string pass)
         {
             dbUser targetUser = await GetUserFromUsername(username);
-            Console.WriteLine($"Comparing password hashes input:{passHash} target:{targetUser.Password}");
-            return passHash == targetUser.Password;
+            Console.WriteLine($"Comparing password hashes input:{pass} target:{targetUser.Password}");
+            
+            return PasswordHandler.PasswordCompare(pass, targetUser.Password);
         }
 
 

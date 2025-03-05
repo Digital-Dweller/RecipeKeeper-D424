@@ -30,8 +30,8 @@ public partial class Login : ContentPage
     {
         string passHash = PasswordHandler.HashPassword(input_Pass.InnerEntry.Text);
         bool userIsUser = await databaseService.IsUser(input_Username.InnerEntry.Text);
-        if (userIsUser) { 
-            bool validLogin = await databaseService.UserLogin(input_Username.InnerEntry.Text, passHash);
+        if (userIsUser) {
+            bool validLogin = await databaseService.UserLogin(input_Username.InnerEntry.Text, input_Pass.InnerEntry.Text);
             if (validLogin) 
             {
                 dbUser user = await databaseService.GetUserFromUsername(input_Username.InnerEntry.Text);

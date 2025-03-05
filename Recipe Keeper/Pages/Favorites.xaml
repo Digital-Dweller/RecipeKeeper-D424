@@ -2,12 +2,73 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Recipe_Keeper.Pages.Favorites"
-             Title="Favorites">
-    <VerticalStackLayout>
-        <Label
-            x:Name="testTitle"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:controls="clr-namespace:Recipe_Keeper.Controls"
+             NavigationPage.HasNavigationBar="False">
+    <Grid BackgroundColor="#B5D8B3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid 
+            Grid.Row="0">
+            <Label
+                Text="Recipe Keeper"
+                FontSize="38"
+                FontAttributes="Bold"
+                TextColor="#9E3F41"
+                Margin="8,0,0,0"
+                VerticalOptions="Center"/>
+            <Image
+                Source="logo.png"
+                HorizontalOptions="End"
+                HeightRequest="65"
+                Margin="0,8,8,8"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <controls:NavIcon Grid.Row="0" Title="Favorites" imgSource="favorites_empty.svg" bgColor="#FDF9F3" edgeCoverWidth="4"/>
+            <controls:NavIcon Grid.Row="1" Title="Recipes" imgSource="recipes_empty.svg" bgColor="#D8BD9F" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="2" Title="Create" imgSource="create.svg" bgColor="#D8BD9F" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="3" Title="Search" imgSource="search.svg" bgColor="#D8BD9F" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="4" Title="Profile" imgSource="profile_empty.svg" bgColor="#D8BD9F" edgeCoverWidth="0"/>
+
+            <Grid Grid.Column="1" Grid.RowSpan="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <BoxView 
+                    BackgroundColor="Black" 
+                    HeightRequest="3"
+                    Margin="-2,0,0,0"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ScrollView BackgroundColor="#FDF9F3">
+                    </ScrollView>
+                    <BoxView Grid.Column="1" BackgroundColor="Black" WidthRequest="2"/>
+                </Grid>
+                <BoxView Grid.Row="2" BackgroundColor="Black" HeightRequest="2"/>
+            </Grid>
+        </Grid>
+
+        <HorizontalStackLayout>
+            
+        </HorizontalStackLayout>
+    </Grid>
 </ContentPage>

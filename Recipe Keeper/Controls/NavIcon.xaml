@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recipe_Keeper.Controls.NavIcon">
+    <Grid>
+        <Border 
+            x:Name="border" 
+            Stroke="Black" 
+            StrokeThickness="3"
+            BackgroundColor="{Binding bgColor}"
+            Margin="7,0,0,0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15,0,15,0"/>
+            </Border.StrokeShape>
+            <VerticalStackLayout
+                VerticalOptions="Center">
+                <Image 
+                    Source="{Binding imgSource}"
+                    Margin="0,0,0,0"/>
+                <Label 
+                    Text="{Binding Title}"
+                    HorizontalOptions="Center"
+                    Margin="5,0,5,0"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- BoxView to hide the right edge of the Border -->
+        <BoxView
+            BackgroundColor="#FDF9F3"
+            WidthRequest="{Binding edgeCoverWidth}"
+            HorizontalOptions="End"
+            VerticalOptions="Fill"
+            Margin="0,4,0,4"/>
+
+    </Grid>
+</ContentView>
