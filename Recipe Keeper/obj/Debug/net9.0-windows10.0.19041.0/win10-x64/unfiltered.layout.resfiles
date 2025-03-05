@@ -1,7 +1,4 @@
 runtimes\win-x64\native\WebView2Loader.dll
-FluentUI.cs
-OpenSans-Regular.ttf
-OpenSans-Semibold.ttf
 add.scale-100.png
 add.scale-125.png
 add.scale-150.png
@@ -68,6 +65,11 @@ delete.scale-125.png
 delete.scale-150.png
 delete.scale-200.png
 delete.scale-400.png
+edit.scale-100.png
+edit.scale-125.png
+edit.scale-150.png
+edit.scale-200.png
+edit.scale-400.png
 favorites_empty.scale-100.png
 favorites_empty.scale-125.png
 favorites_empty.scale-150.png
@@ -129,9 +131,4 @@ search.scale-125.png
 search.scale-150.png
 search.scale-200.png
 search.scale-400.png
-splashSplashScreen.scale-100.png
-splashSplashScreen.scale-125.png
-splashSplashScreen.scale-150.png
-splashSplashScreen.scale-200.png
-splashSplashScreen.scale-400.png
 AboutAssets.txt

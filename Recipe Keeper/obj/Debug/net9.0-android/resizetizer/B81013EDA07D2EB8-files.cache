@@ -3,6 +3,7 @@ obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\add.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\cancel.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\create.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\delete.png
+obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\edit.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\favorites_empty.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\favorites_emptyblk.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\favorites_filled.png
@@ -19,6 +20,7 @@ obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\add.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\cancel.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\create.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\delete.png
+obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\edit.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\favorites_empty.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\favorites_emptyblk.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\favorites_filled.png
@@ -35,6 +37,7 @@ obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\add.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\cancel.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\create.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\delete.png
+obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\edit.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\favorites_empty.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\favorites_emptyblk.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\favorites_filled.png
@@ -51,6 +54,7 @@ obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\add.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\cancel.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\create.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\delete.png
+obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\edit.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\favorites_empty.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\favorites_emptyblk.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\favorites_filled.png
@@ -67,6 +71,7 @@ obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\add.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\cancel.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\create.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\delete.png
+obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\edit.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\favorites_empty.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\favorites_emptyblk.png
 obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\favorites_filled.png

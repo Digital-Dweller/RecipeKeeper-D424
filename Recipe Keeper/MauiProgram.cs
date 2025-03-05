@@ -34,13 +34,15 @@ namespace Recipe_Keeper
             });
 
             //Add pages to the DI container.
-
             builder.Services.AddTransient<Loading>();
             builder.Services.AddTransient<LandingPage>();
             builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<CreateProfile>();
             builder.Services.AddTransient<Favorites>();
             builder.Services.AddTransient<CreateRecipe>();
+            builder.Services.AddTransient<Profile>();
+            builder.Services.AddTransient<Recipes>();
+            builder.Services.AddTransient<Search>();
 
             //Add controls to the DI container.
             builder.Services.AddTransient<TextInput>();

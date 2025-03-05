@@ -39,11 +39,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <controls:NavIcon Grid.Row="0" Title="Favorites" imgSource="favorites_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="1" Title="Recipes" imgSource="recipes_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="2" Title="Create" imgSource="create.svg" bgColor="#FDF9F3" edgeCoverWidth="4"/>
-            <controls:NavIcon Grid.Row="3" Title="Search" imgSource="search.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
-            <controls:NavIcon Grid.Row="4" Title="Profile" imgSource="profile_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="0" Title="Favorites" Tapped="onClick_Favorites" imgSource="favorites_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="1" Title="Recipes" Tapped="onClick_Recipes" imgSource="recipes_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="2" Title="Create" Tapped="onClick_CreateRecipe" imgSource="create.svg" bgColor="#FDF9F3" edgeCoverWidth="4"/>
+            <controls:NavIcon Grid.Row="3" Title="Search" Tapped="onClick_Search" imgSource="search.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="4" Title="Profile" Tapped="onClick_Profile" imgSource="profile_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
 
             <Grid Grid.Column="1" Grid.RowSpan="5">
                 <Grid.RowDefinitions>
@@ -62,9 +62,17 @@
                     </Grid.ColumnDefinitions>
                     <ScrollView BackgroundColor="#FDF9F3">
                     </ScrollView>
-                    <BoxView Grid.Column="1" BackgroundColor="Black" WidthRequest="2"/>
+                    <BoxView 
+                        Grid.Column="1" 
+                        BackgroundColor="Black" 
+                        WidthRequest="5"
+                        Margin="0,0,0,0"/>
                 </Grid>
-                <BoxView Grid.Row="2" BackgroundColor="Black" HeightRequest="2"/>
+                <BoxView 
+                    Grid.Row="2" 
+                    BackgroundColor="Black" 
+                    HeightRequest="3"
+                    Margin="-2,0,0,.5"/>
             </Grid>
         </Grid>
 
@@ -77,11 +85,10 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <controls:UiNavButton Title="Logout" Source="logout.svg" HorizontalOptions="Start"/>
-            <controls:UiNavButton Grid.Column="3" Title="Home" Source="home.svg" Margin="-40,0,0,0"/>
+            <controls:UiNavButton Title="Logout" Source="logout.svg" HorizontalOptions="Start" Margin="5,0,0,0"/>
+            <controls:UiNavButton Grid.Column="3" Title="Home" Source="home.svg" Margin="-37,0,0,0"/>
             <controls:UiNavButton Grid.Column="4" Title="Save" Source="save.svg"/>
-            <controls:UiNavButton Grid.Column="5" Title="Cancel" Source="cancel.svg"/>
-
+            <controls:UiNavButton Grid.Column="5" Title="Cancel" Source="cancel.svg" Margin="10,0,5,0"/>
         </Grid>
     </Grid>
 </ContentPage>
