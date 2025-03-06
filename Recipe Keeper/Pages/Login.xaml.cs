@@ -34,10 +34,13 @@ public partial class Login : ContentPage
             bool validLogin = await databaseService.UserLogin(input_Username.InnerEntry.Text, input_Pass.InnerEntry.Text);
             if (validLogin) 
             {
-                dbUser user = await databaseService.GetUserFromUsername(input_Username.InnerEntry.Text);
-                userSession.Login(user);
                 var favorites_page = ServiceProvider.GetService<Favorites>();
-                await Application.Current.MainPage.Navigation.PushAsync(favorites_page);
+                await Navigation.PushAsync(favorites_page);
+                dbUser user = await databaseService.GetUserFromUsername(input_Username.InnerEntry.Text);
+                if (rememberMeCheckBox.IsChecked)
+                { await databaseService.SetRememberMe(user); }
+                await userSession.Login(user);
+
             }
             else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
         }

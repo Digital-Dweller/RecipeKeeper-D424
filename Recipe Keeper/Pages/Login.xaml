@@ -44,6 +44,10 @@
                     HorizontalOptions="Center"
                     Margin="30,20,0,0"/>
             </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <CheckBox x:Name="rememberMeCheckBox"/>
+                <Label Text="Remember me" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
 
         </VerticalStackLayout>
     </Grid>

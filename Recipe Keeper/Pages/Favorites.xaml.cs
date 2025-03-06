@@ -23,7 +23,7 @@ public partial class Favorites : ContentPage
 
     private async void onClick_Logout(object sender, EventArgs e)
     {
-        userSession.Logout();
+        await userSession.Logout();
         await Navigation.PopToRootAsync();
     }
     private async void onClick_Recipes(object sender, EventArgs e)

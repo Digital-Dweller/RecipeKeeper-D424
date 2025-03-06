@@ -15,7 +15,7 @@ public partial class Profile : ContentPage
 
     private async void onClick_Logout(object sender, EventArgs e)
     {
-        userSession.Logout();
+        await userSession.Logout();
         await Navigation.PopToRootAsync();
     }
     private async void onClick_Favorites(object sender, EventArgs e)

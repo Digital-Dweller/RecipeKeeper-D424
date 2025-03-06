@@ -28,9 +28,10 @@ namespace Recipe_Keeper
             });
 
             //Add UserSession to the DI container.
-            builder.Services.AddSingleton(s =>
+            builder.Services.AddSingleton<UserSession>(s =>
             {
-                return new UserSession();
+                var databaseService = s.GetRequiredService<DatabaseService>();
+                return new UserSession(databaseService);
             });
 
             //Add pages to the DI container.

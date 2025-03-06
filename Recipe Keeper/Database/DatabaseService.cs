@@ -67,6 +67,24 @@ namespace Recipe_Keeper.Database
             return targetUser;
         }
 
+        public async Task SetRememberMe(dbUser targetUser)
+        {
+            targetUser.Remembered = true;
+            await dbConnection.UpdateAsync(targetUser);
+        }
+        public async Task<dbUser> CheckRememberMe()
+        {
+            dbUser targetUser = await dbConnection.Table<dbUser>().Where(u => u.Remembered == true).FirstOrDefaultAsync();
+            return targetUser;
+        }
+        public async Task RemoveRememberMe(string username)
+        {
+            Console.WriteLine($"Removing user:{username}");
+            dbUser targetUser = await GetUserFromUsername(username);
+            targetUser.Remembered = false;
+            await dbConnection.UpdateAsync(targetUser);
+        }
+
         //Create the default tables in the SQLite database.
         public async Task CreateDefaultTables()
         {

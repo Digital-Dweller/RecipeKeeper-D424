@@ -25,7 +25,17 @@ public partial class Loading : ContentPage
         { await databaseService.CreateDefaultTables(); }
         //Check if the dbUser table is empty, navigate to the landing page if it is or navigate to login if not.
         bool dbUserIsEmpty = await databaseService.dbUser_isEmptyAsync();
-        if (!dbUserIsEmpty)
+        //Check if there is a user with a saved login enabled. 
+        var userRemembered = await databaseService.CheckRememberMe();
+
+        //write conditonal stattment check
+        if (userRemembered != null)
+        {
+            await userSession.Login(userRemembered);
+            var favorites_page = ServiceProvider.GetService<Favorites>();
+            await Navigation.PushAsync(favorites_page);
+        }
+        else if (!dbUserIsEmpty)
         {
             var login_page = ServiceProvider.GetService<Login>();
             await Application.Current.MainPage.Navigation.PushAsync(login_page);

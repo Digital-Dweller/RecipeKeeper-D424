@@ -14,12 +14,14 @@ namespace Recipe_Keeper.Database
         private string username;
         private string password;
         private string email;
+        private bool remembered;
         public dbUser(){}
         public dbUser(string username, string email, string password)
         {
             Username = username;
             Email = email;
             Password = password;
+            Remembered = false;
         }
         //Getters and setters with encapsulation support.
         public string Username
@@ -36,6 +38,11 @@ namespace Recipe_Keeper.Database
         {
             get { return email; }
             set { email = value; }
+        }
+        public bool Remembered
+        {
+            get { return remembered; }
+            set { remembered = value; }
         }
     }
 }
