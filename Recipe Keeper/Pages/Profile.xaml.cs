@@ -10,8 +10,14 @@ public partial class Profile : ContentPage
 		InitializeComponent();
         ServiceProvider = serviceProvider;
         this.userSession = userSession;
+        BindingContext = this;
     }
 
+    private async void onClick_Logout(object sender, EventArgs e)
+    {
+        userSession.Logout();
+        await Navigation.PopToRootAsync();
+    }
     private async void onClick_Favorites(object sender, EventArgs e)
     {
         await Navigation.PopAsync();

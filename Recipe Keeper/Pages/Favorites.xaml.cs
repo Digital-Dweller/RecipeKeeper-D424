@@ -1,4 +1,5 @@
 using Recipe_Keeper.Classes;
+using System.Windows.Input;
 using Recipe_Keeper.Classes.Utilities;
 using Recipe_Keeper.Database;
 
@@ -13,12 +14,18 @@ public partial class Favorites : ContentPage
 		InitializeComponent();
         ServiceProvider = serviceProvider;
         this.userSession = userSession;
+        BindingContext = this;
     }
     protected override async void OnAppearing()
 	{
         base.OnAppearing();
     }
 
+    private async void onClick_Logout(object sender, EventArgs e)
+    {
+        userSession.Logout();
+        await Navigation.PopToRootAsync();
+    }
     private async void onClick_Recipes(object sender, EventArgs e)
     {
         var recipes_page = ServiceProvider.GetService<Recipes>();
@@ -39,7 +46,6 @@ public partial class Favorites : ContentPage
         var profile_page = ServiceProvider.GetService<Profile>();
         await Navigation.PushAsync(profile_page);
     }
-
 
 
 }

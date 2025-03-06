@@ -1,10 +1,11 @@
+using System.Windows.Input;
+
 namespace Recipe_Keeper.Controls;
 
 public partial class UiNavButton : ContentView
 {
     public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(UiNavButton), string.Empty);
     public static readonly BindableProperty SourceProperty = BindableProperty.Create(nameof(Source), typeof(string), typeof(UiNavButton), string.Empty);
-
     public string Title
     {
         get => (string)GetValue(TitleProperty);
