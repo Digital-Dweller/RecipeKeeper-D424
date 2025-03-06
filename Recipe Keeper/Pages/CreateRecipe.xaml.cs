@@ -1,5 +1,6 @@
 using System;
 using Recipe_Keeper.Classes;
+using Recipe_Keeper.Classes.Utilities;
 
 
 namespace Recipe_Keeper.Pages;
@@ -8,11 +9,13 @@ public partial class CreateRecipe : ContentPage
 {
     private IServiceProvider ServiceProvider;
     private readonly UserSession userSession;
+    public List<string> categoriesList { get; set; }
     public CreateRecipe(IServiceProvider serviceProvider, UserSession userSession)
 	{
 		InitializeComponent();
         ServiceProvider = serviceProvider;
         this.userSession = userSession;
+        categoriesList = RecipeCategories.categories;
         BindingContext = this;
     }
     private async void onClick_Logout(object sender, EventArgs e)

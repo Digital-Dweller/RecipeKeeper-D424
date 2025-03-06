@@ -61,6 +61,56 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <ScrollView BackgroundColor="#FDF9F3">
+                        <VerticalStackLayout>
+                            <Border 
+                                Stroke="Black"
+                                StrokeThickness="2"
+                                HeightRequest="200"
+                                Margin="20,10,20,0">
+                                <Grid>
+                                    <Image x:Name="recipeImage"/>
+                                    <VerticalStackLayout VerticalOptions="Center">
+                                        <Label Text="Add" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label Text="Photo Below" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Border>
+                            <Button Text="Add Image" FontSize="16" TextColor="Black" WidthRequest="140" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Margin="0,5,0,0"/>
+                            <VerticalStackLayout>
+                                <controls:TextInput Title="Title" Placeholder="Title..." x:Name="input_Title"/>
+                                <controls:TextInput Title="Author" Placeholder="Author..." x:Name="input_Author"/>
+                                <Border Stroke="Black" Margin="40,16,40,0" BackgroundColor="White">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="8"/>
+                                    </Border.StrokeShape>
+                                    <VerticalStackLayout>
+                                        <Label Text="Category" FontSize="16" TextColor="#9E3F41" Margin="10,3,0,0"/>
+                                        <Picker Title="Select Category" FontSize="22" ItemsSource="{Binding categoriesList}" Margin="10,0,0,0"/>
+                                    </VerticalStackLayout>
+                                </Border>
+                                <Border Stroke="Black" StrokeThickness="2" Margin="20,20,20,0" BackgroundColor="White">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="8"/>
+                                    </Border.StrokeShape>
+                                    <VerticalStackLayout Margin="5,5,5,0">
+                                        <Label Text="Description" FontSize="16" Margin="5,0,0,0"/>
+                                        <Editor Placeholder="Description..." HeightRequest="140"/>
+                                    </VerticalStackLayout>
+                                </Border>
+
+                                <Label Text="Ingredients" FontSize="26" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,10"/>
+                                <VerticalStackLayout x:Name="ingredientsSection">
+                                    <ImageButton Source="add.svg"/>
+                                </VerticalStackLayout>
+
+                                <Label Text="Directions" FontSize="26" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,10"/>
+                                <VerticalStackLayout x:Name="directionsSection" Margin="0,0,0,20">
+                                    <ImageButton Source="add.svg"/>
+                                </VerticalStackLayout>
+
+
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
                     </ScrollView>
                     <BoxView 
                         Grid.Column="1" 
