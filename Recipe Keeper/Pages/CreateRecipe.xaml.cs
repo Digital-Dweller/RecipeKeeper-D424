@@ -1,6 +1,7 @@
 using System;
 using Recipe_Keeper.Classes;
 using Recipe_Keeper.Classes.Utilities;
+using Microsoft.Maui.Media;
 
 
 namespace Recipe_Keeper.Pages;
@@ -9,6 +10,7 @@ public partial class CreateRecipe : ContentPage
 {
     private IServiceProvider ServiceProvider;
     private readonly UserSession userSession;
+    private string imagePath = string.Empty;
     public List<string> categoriesList { get; set; }
     public CreateRecipe(IServiceProvider serviceProvider, UserSession userSession)
 	{
@@ -18,6 +20,38 @@ public partial class CreateRecipe : ContentPage
         categoriesList = RecipeCategories.categories;
         BindingContext = this;
     }
+
+    private async void OnClick_AddPhoto(object sender, EventArgs e)
+    {
+        try
+        {
+            var targetImage = await MediaPicker.Default.PickPhotoAsync();
+            if (targetImage != null)
+            {
+                var imageRead = await targetImage.OpenReadAsync();
+                imagePath = ImageSource.FromStream(() => imageRead).ToString();
+                recipeImage.Source = imagePath;
+            }
+        }
+        catch (Exception exception)
+        { await DisplayAlert("Error", $"An error occurred: {exception.Message}", "Ok"); }
+    }
+    private async void OnClick_TakePhoto(object sender, EventArgs e)
+    {
+        try
+        {
+            var targetImage = await MediaPicker.Default.CapturePhotoAsync();
+            if (targetImage != null)
+            {
+                var imageRead = await targetImage.OpenReadAsync();
+                imagePath = ImageSource.FromStream(() => imageRead).ToString();
+                recipeImage.Source = imagePath;
+            }
+        }
+        catch (Exception exception)
+        { await DisplayAlert("Error", $"An error occurred: {exception.Message}", "Ok"); }
+    }
+
     private async void onClick_Logout(object sender, EventArgs e)
     {
         await userSession.Logout();

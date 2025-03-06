@@ -75,7 +75,10 @@
                                     </VerticalStackLayout>
                                 </Grid>
                             </Border>
-                            <Button Text="Add Image" FontSize="16" TextColor="Black" WidthRequest="140" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Margin="0,5,0,0"/>
+                            <HorizontalStackLayout HorizontalOptions="Center">
+                                <Button Text="Add Image" Clicked="OnClick_AddPhoto" FontSize="14" TextColor="Black" WidthRequest="100" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Margin="0,5,20,0"/>
+                                <Button Text="Take Photo" Clicked="OnClick_TakePhoto" FontSize="14" TextColor="Black" WidthRequest="100" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Margin="20,5,0,0"/>
+                            </HorizontalStackLayout>
                             <VerticalStackLayout>
                                 <controls:TextInput Title="Title" Placeholder="Title..." x:Name="input_Title"/>
                                 <controls:TextInput Title="Author" Placeholder="Author..." x:Name="input_Author"/>
