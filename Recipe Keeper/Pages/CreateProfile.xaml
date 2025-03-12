@@ -67,11 +67,6 @@
                     BorderColor="Black"
                     Margin="20,16,0,8"/>
             </Grid>
-
-
-
-
-
         </VerticalStackLayout>
     </Grid>
 </ContentPage>

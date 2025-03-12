@@ -15,6 +15,17 @@ public partial class Recipes : ContentPage
         this.userSession = userSession;
         BindingContext = this;
     }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        foreach (Recipe recipe in userSession.UserRecipes) 
+        {
+            
+        }
+    }
+
+
     private async void onClick_Logout(object sender, EventArgs e)
     {
         await userSession.Logout();

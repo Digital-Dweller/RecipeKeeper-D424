@@ -49,10 +49,11 @@ namespace Recipe_Keeper
             builder.Services.AddTransient<TextInput>();
             builder.Services.AddTransient<NavIcon>();
             builder.Services.AddTransient<UiNavButton>();
-
-
-
-
+            builder.Services.AddTransient<AddIngredient>();
+            builder.Services.AddTransient<NewIngredient>();
+            builder.Services.AddTransient<NewDirection>();
+            builder.Services.AddTransient<AddDirection>();
+            builder.Services.AddTransient<RecipeCard>();
 
 
 #if DEBUG

@@ -3,18 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SQLite;
 
-namespace Recipe_Keeper.Database
+namespace Recipe_Keeper.Classes
 {
-    public class dbDirection
+    public class Direction
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public int OrderPosition { get; set; }
-        [Indexed]
         public int RecipeId { get; set; }
     }
 }

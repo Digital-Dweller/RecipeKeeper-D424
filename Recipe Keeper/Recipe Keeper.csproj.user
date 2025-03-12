@@ -8,7 +8,22 @@
     <DefaultDevice>pixel_7_pro_-_api_35</DefaultDevice>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="Controls\AddDirection.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Controls\NewDirection.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Controls\NewIngredient.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Controls\AddIngredient.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Controls\NavIcon.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Controls\RecipeCard.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Controls\TextInput.xaml">

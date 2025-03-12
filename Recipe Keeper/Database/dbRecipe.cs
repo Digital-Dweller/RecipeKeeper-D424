@@ -7,7 +7,7 @@ using SQLite;
 
 namespace Recipe_Keeper.Database
 {
-    internal class dbRecipe
+    public class dbRecipe
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -19,8 +19,5 @@ namespace Recipe_Keeper.Database
         public string? ImagePath { get; set; }
         [Indexed]
         public int UserId { get; set; }
-
-
-
     }
 }

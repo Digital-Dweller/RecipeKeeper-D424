@@ -13,6 +13,7 @@ namespace Recipe_Keeper.Classes
         public int id { get; private set; }
         public string username { get; private set; }
         public bool IsLoggedIn { get; private set; }
+        public List<Recipe> UserRecipes { get; set; }
         private readonly DatabaseService databaseService;
         public UserSession(DatabaseService databaseService)
         {
@@ -23,6 +24,7 @@ namespace Recipe_Keeper.Classes
             this.id = user.id;
             this.username = user.Username;
             IsLoggedIn = true;
+            await GetUserRecipes();
         }
         public async Task Logout()
         {
@@ -31,7 +33,13 @@ namespace Recipe_Keeper.Classes
             this.id = 0;
             this.username = string.Empty;
             IsLoggedIn = false;
-
         }
+
+        public async Task GetUserRecipes()
+        {
+            List<Recipe> userRecipes = await databaseService.GetRecipes(id);
+            UserRecipes.AddRange(userRecipes);
+        }
+
     }
 }

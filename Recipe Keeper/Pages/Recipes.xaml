@@ -4,15 +4,9 @@
              x:Class="Recipe_Keeper.Pages.Recipes"
              xmlns:controls="clr-namespace:Recipe_Keeper.Controls"
              NavigationPage.HasNavigationBar="False">
-    
-    <Grid BackgroundColor="#B5D8B3">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid 
-            Grid.Row="0">
+
+    <VerticalStackLayout BackgroundColor="#B5D8B3">
+        <Grid >
             <Label
                 Text="Recipe Keeper"
                 FontSize="38"
@@ -88,5 +82,5 @@
             <controls:UiNavButton Grid.Column="2" Tapped="onClick_Favorites" Title="Home" Source="home.svg" Margin="-2,0,0,0"/>
             <controls:UiNavButton Grid.Column="4" Title="Edit" Source="edit.svg" HorizontalOptions="End" Margin="0,0,5,0"/>
         </Grid>
-    </Grid>
+    </VerticalStackLayout>
 </ContentPage>

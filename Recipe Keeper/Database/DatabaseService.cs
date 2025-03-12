@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SQLite;
 using Recipe_Keeper.Database;
 using Recipe_Keeper.Classes.Utilities;
+using Recipe_Keeper.Classes;
 
 namespace Recipe_Keeper.Database
 {
@@ -41,7 +42,7 @@ namespace Recipe_Keeper.Database
         public async Task<bool> UserLogin(string username, string pass)
         {
             dbUser targetUser = await GetUserFromUsername(username);
-            Console.WriteLine($"Comparing password hashes input:{pass} target:{targetUser.Password}");
+
             
             return PasswordHandler.PasswordCompare(pass, targetUser.Password);
         }
@@ -53,6 +54,19 @@ namespace Recipe_Keeper.Database
             await dbConnection.InsertAsync(newUser);
         }
 
+        public async Task AddRecipe(dbRecipe newRecipe)
+        {
+            await dbConnection.InsertAsync(newRecipe);
+        }
+        public async Task AddIngredient(dbIngredient newIngredient)
+        {
+            await dbConnection.InsertAsync(newIngredient);
+        }
+        public async Task AddDirection(dbDirection newDirection)
+        {
+            await dbConnection.InsertAsync(newDirection);
+        }
+
         //Check if user exists.
         public async Task<bool> IsUser(string username)
         {
@@ -61,10 +75,57 @@ namespace Recipe_Keeper.Database
             else { return false; }
         }
 
+        public async Task<bool> IsRecipe(string recipeName)
+        {
+            var targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName).FirstOrDefaultAsync();
+            if (targetRecipe != null) { return true; }
+            else { return false; }
+        }
+
         public async Task<dbUser> GetUserFromUsername(string username)
         {
             dbUser targetUser = await dbConnection.Table<dbUser>().Where(u => u.Username == username).FirstOrDefaultAsync();
             return targetUser;
+        }
+
+        public async Task<int> GetRecipeID(string recipeName)
+        {
+            bool recipeExists = await IsRecipe(recipeName);
+            if (recipeExists != null) 
+            {
+                dbRecipe targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName).FirstOrDefaultAsync();
+                return targetRecipe.Id;
+            }
+            else { return 0; }            
+        }
+        public async Task<List<Recipe>> GetRecipes(int userId)
+        {
+            List<dbRecipe> userRecipes = await dbConnection.Table<dbRecipe>().Where(r => r.UserId == userId).ToListAsync();
+            var recipesList = userRecipes.Select(async userRecipe => new Recipe
+            {
+                Id = userRecipe.Id,
+                Title = userRecipe.Title,
+                Author = userRecipe.Author,
+                Description = userRecipe.Description,
+                Category = userRecipe.Category,
+                Favorited = userRecipe.Favorited,
+                ImagePath = userRecipe.ImagePath,
+                Ingredients = await GetIngredients(userRecipe.Id),
+                Directions = await GetDirections(userRecipe.Id),
+            }).ToList();
+
+            Recipe[] recipesArray = await Task.WhenAll(recipesList);
+            return recipesArray.ToList();
+        }
+        public async Task<List<dbIngredient>> GetIngredients(int recipeId)
+        {
+            List<dbIngredient> recipeIngredients = await dbConnection.Table<dbIngredient>().Where(i => i.RecipeId == recipeId).ToListAsync();
+            return recipeIngredients;
+        }
+        public async Task<List<dbDirection>> GetDirections(int recipeId)
+        {
+            List<dbDirection> recipeDirections = await dbConnection.Table<dbDirection>().Where(i => i.RecipeId == recipeId).ToListAsync();
+            return recipeDirections;
         }
 
         public async Task SetRememberMe(dbUser targetUser)

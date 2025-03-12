@@ -17,6 +17,7 @@
                 Margin="10,3,0,0"/>
             <Entry
                 Placeholder="{Binding Placeholder}"
+                Text="{Binding InputValue}"
                 x:Name="innerEntry"
                 FontSize="24"
                 MaxLength="20"

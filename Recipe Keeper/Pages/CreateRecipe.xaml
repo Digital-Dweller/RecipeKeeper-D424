@@ -62,19 +62,23 @@
                     </Grid.ColumnDefinitions>
                     <ScrollView BackgroundColor="#FDF9F3">
                         <VerticalStackLayout>
-                            <Border 
-                                Stroke="Black"
-                                StrokeThickness="2"
-                                HeightRequest="200"
-                                Margin="20,10,20,0">
-                                <Grid>
-                                    <Image x:Name="recipeImage"/>
-                                    <VerticalStackLayout VerticalOptions="Center">
-                                        <Label Text="Add" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                        <Label Text="Photo Below" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    </VerticalStackLayout>
-                                </Grid>
-                            </Border>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Border x:Name="photoBorder" Stroke="Black" StrokeThickness="2" Padding="50" Grid.Column="1" Margin="0,20,0,0">
+                                    <Grid>
+                                        <Image x:Name="recipeImage" Aspect="AspectFit"/>
+                                        <VerticalStackLayout VerticalOptions="Center">
+                                            <Label x:Name="photoText1" Text="Add" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Label x:Name="photoText2" Text="Photo Below" FontSize="26" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
                             <HorizontalStackLayout HorizontalOptions="Center">
                                 <Button Text="Add Image" Clicked="OnClick_AddPhoto" FontSize="14" TextColor="Black" WidthRequest="100" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Margin="0,5,20,0"/>
                                 <Button Text="Take Photo" Clicked="OnClick_TakePhoto" FontSize="14" TextColor="Black" WidthRequest="100" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Margin="20,5,0,0"/>
@@ -88,7 +92,7 @@
                                     </Border.StrokeShape>
                                     <VerticalStackLayout>
                                         <Label Text="Category" FontSize="16" TextColor="#9E3F41" Margin="10,3,0,0"/>
-                                        <Picker Title="Select Category" FontSize="22" ItemsSource="{Binding categoriesList}" Margin="10,0,0,0"/>
+                                        <Picker Title="Select Category" x:Name="input_Category" FontSize="22" ItemsSource="{Binding categoriesList}" Margin="10,0,0,0"/>
                                     </VerticalStackLayout>
                                 </Border>
                                 <Border Stroke="Black" StrokeThickness="2" Margin="20,20,20,0" BackgroundColor="White">
@@ -97,19 +101,16 @@
                                     </Border.StrokeShape>
                                     <VerticalStackLayout Margin="5,5,5,0">
                                         <Label Text="Description" FontSize="16" Margin="5,0,0,0"/>
-                                        <Editor Placeholder="Description..." HeightRequest="140"/>
+                                        <Editor Placeholder="Description..." x:Name="input_Description" HeightRequest="140"/>
                                     </VerticalStackLayout>
                                 </Border>
 
                                 <Label Text="Ingredients" FontSize="26" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,10"/>
-                                <VerticalStackLayout x:Name="ingredientsSection">
-                                    <ImageButton Source="add.svg"/>
-                                </VerticalStackLayout>
-
+                                <VerticalStackLayout x:Name="ingredientsSection" Margin="0,20,0,0"/>
+                                <ImageButton Source="add.svg" Clicked="onClick_NewIngredient"/>
                                 <Label Text="Directions" FontSize="26" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,10"/>
-                                <VerticalStackLayout x:Name="directionsSection" Margin="0,0,0,20">
-                                    <ImageButton Source="add.svg"/>
-                                </VerticalStackLayout>
+                                <VerticalStackLayout x:Name="directionsSection" Margin="0,20,0,0"/>
+                                <ImageButton Source="add.svg" Clicked="onClick_NewDirection"/>
 
 
                             </VerticalStackLayout>
@@ -140,7 +141,7 @@
             </Grid.ColumnDefinitions>
             <controls:UiNavButton Title="Logout" Source="logout.svg" HorizontalOptions="Start" Margin="5,0,0,0"/>
             <controls:UiNavButton Grid.Column="3" Tapped="onClick_Favorites" Title="Home" Source="home.svg" Margin="-37,0,0,0"/>
-            <controls:UiNavButton Grid.Column="4" Title="Save" Source="save.svg"/>
+            <controls:UiNavButton Grid.Column="4" Tapped="onClick_SaveRecipe" Title="Save" Source="save.svg"/>
             <controls:UiNavButton Grid.Column="5" Title="Cancel" Source="cancel.svg" Margin="10,0,5,0"/>
         </Grid>
     </Grid>
