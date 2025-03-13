@@ -100,22 +100,27 @@ namespace Recipe_Keeper.Database
         }
         public async Task<List<Recipe>> GetRecipes(int userId)
         {
+            List<Recipe> returnList = new List<Recipe>();
             List<dbRecipe> userRecipes = await dbConnection.Table<dbRecipe>().Where(r => r.UserId == userId).ToListAsync();
-            var recipesList = userRecipes.Select(async userRecipe => new Recipe
+            if (userRecipes != null)
             {
-                Id = userRecipe.Id,
-                Title = userRecipe.Title,
-                Author = userRecipe.Author,
-                Description = userRecipe.Description,
-                Category = userRecipe.Category,
-                Favorited = userRecipe.Favorited,
-                ImagePath = userRecipe.ImagePath,
-                Ingredients = await GetIngredients(userRecipe.Id),
-                Directions = await GetDirections(userRecipe.Id),
-            }).ToList();
+                var recipesList = userRecipes.Select(async userRecipe => new Recipe
+                {
+                    Id = userRecipe.Id,
+                    Title = userRecipe.Title,
+                    Author = userRecipe.Author,
+                    Description = userRecipe.Description,
+                    Category = userRecipe.Category,
+                    Favorited = userRecipe.Favorited,
+                    ImagePath = userRecipe.ImagePath,
+                    Ingredients = await GetIngredients(userRecipe.Id),
+                    Directions = await GetDirections(userRecipe.Id),
+                }).ToList();
 
-            Recipe[] recipesArray = await Task.WhenAll(recipesList);
-            return recipesArray.ToList();
+                Recipe[] recipesArray = await Task.WhenAll(recipesList);
+                returnList = recipesArray.ToList();
+            }
+            return returnList;
         }
         public async Task<List<dbIngredient>> GetIngredients(int recipeId)
         {

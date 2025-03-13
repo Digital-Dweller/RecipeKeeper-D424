@@ -37,8 +37,12 @@ namespace Recipe_Keeper.Classes
 
         public async Task GetUserRecipes()
         {
-            List<Recipe> userRecipes = await databaseService.GetRecipes(id);
-            UserRecipes.AddRange(userRecipes);
+            List<Recipe> userRecipes = new List<Recipe>();
+            userRecipes = await databaseService.GetRecipes(id);
+            if (userRecipes.Count > 0)
+            {
+                UserRecipes.AddRange(userRecipes);
+            }
         }
 
     }
