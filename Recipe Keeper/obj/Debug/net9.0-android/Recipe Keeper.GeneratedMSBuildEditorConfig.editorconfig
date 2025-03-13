@@ -12,139 +12,139 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Recipe_Keeper
-build_property.ProjectDir = C:\Users\Alex\Desktop\School\D424\RKMA\Recipe Keeper\
+build_property.ProjectDir = C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/App.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/AppShell.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Controls/AddDirection.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Controls/AddDirection.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Controls.AddDirection.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\AddDirection.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\AddDirection.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Controls/AddIngredient.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Controls/AddIngredient.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Controls.AddIngredient.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\AddIngredient.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\AddIngredient.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Controls/NavIcon.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Controls/NavIcon.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Controls.NavIcon.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\NavIcon.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\NavIcon.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Controls/NewDirection.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Controls/NewDirection.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Controls.NewDirection.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\NewDirection.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\NewDirection.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Controls/NewIngredient.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Controls/NewIngredient.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Controls.NewIngredient.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\NewIngredient.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\NewIngredient.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Controls/RecipeCard.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Controls/RecipeCard.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Controls.RecipeCard.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\RecipeCard.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\RecipeCard.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Controls/TextInput.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Controls/TextInput.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Controls.TextInput.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\TextInput.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\TextInput.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Controls/UiNavButton.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Controls/UiNavButton.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Controls.UiNavButton.xaml
 build_metadata.AdditionalFiles.TargetPath = Controls\UiNavButton.xaml
 build_metadata.AdditionalFiles.RelativePath = Controls\UiNavButton.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/MainPage.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/CreateProfile.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/CreateProfile.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.CreateProfile.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\CreateProfile.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\CreateProfile.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/CreateRecipe.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/CreateRecipe.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.CreateRecipe.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\CreateRecipe.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\CreateRecipe.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Favorites.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/Favorites.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Favorites.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Favorites.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Favorites.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/LandingPage.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/LandingPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.LandingPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\LandingPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\LandingPage.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Loading.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/Loading.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Loading.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Loading.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Loading.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Login.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Login.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Login.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Login.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Profile.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/Profile.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Profile.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Profile.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Profile.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Recipes.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/Recipes.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Recipes.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Recipes.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Recipes.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Pages/Search.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/Search.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Search.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\Search.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Search.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Resources/Styles/Colors.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/Alex/Desktop/School/D424/RKMA/Recipe Keeper/Resources/Styles/Styles.xaml]
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
