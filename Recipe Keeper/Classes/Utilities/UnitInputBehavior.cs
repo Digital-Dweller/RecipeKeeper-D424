@@ -24,9 +24,10 @@ namespace Recipe_Keeper.Classes.Utilities
 
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (!Regex.IsMatch(e.NewTextValue, @"^\d+(\/\d*)?$"))
+            var entry = (Entry)sender;
+            if (!Regex.IsMatch(e.NewTextValue, @"^(\d+(\/\d*)?)?$") && e.OldTextValue != null)
             {
-                ((Entry)sender).Text = e.OldTextValue;
+                entry.Dispatcher.Dispatch(() => entry.Text = e.OldTextValue);
             }
         }
     }
