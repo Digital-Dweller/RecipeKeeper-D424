@@ -4,16 +4,17 @@ namespace Recipe_Keeper.Controls;
 
 public partial class RecipeCard : ContentView
 {
-    public static readonly BindableProperty FavoritedProperty = BindableProperty.Create(nameof(FavoriteCommandBinding), typeof(ICommand), typeof(RecipeCard), null);
-    public static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(nameof(ImageSourceBinding), typeof(List<string>), typeof(RecipeCard), null);
-    public static readonly BindableProperty TitleBindingProperty = BindableProperty.Create(nameof(TitleBinding), typeof(List<string>), typeof(RecipeCard), null);
-    public static readonly BindableProperty FavoriteImageProperty = BindableProperty.Create(nameof(FavoriteImageBinding), typeof(List<string>), typeof(RecipeCard), null);
-    public static readonly BindableProperty DescriptionProperty = BindableProperty.Create(nameof(DescriptionBinding), typeof(List<string>), typeof(RecipeCard), null);
+    public static readonly BindableProperty FavoritedProperty = BindableProperty.Create(nameof(FavoriteCommandBinding), typeof(ICommand), typeof(RecipeCard));
+    public static readonly BindableProperty ImageSourceProperty = BindableProperty.Create(nameof(ImageSourceBinding), typeof(string), typeof(RecipeCard));
+    public static readonly BindableProperty TitleBindingProperty = BindableProperty.Create(nameof(TitleBinding), typeof(string), typeof(RecipeCard));
+    public static readonly BindableProperty FavoriteImageProperty = BindableProperty.Create(nameof(FavoriteImageBinding), typeof(string), typeof(RecipeCard));
+    public static readonly BindableProperty DescriptionProperty = BindableProperty.Create(nameof(DescriptionBinding), typeof(string), typeof(RecipeCard));
 
     public RecipeCard()
 	{
 		InitializeComponent();
-	}
+        BindingContext = this;
+    }
     public ICommand FavoriteCommandBinding
     {
         get => (ICommand)GetValue(FavoritedProperty);

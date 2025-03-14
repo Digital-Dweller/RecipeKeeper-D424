@@ -98,6 +98,12 @@ namespace Recipe_Keeper.Database
             }
             else { return 0; }            
         }
+
+        public async Task<dbRecipe> GetRecipe(int recipeId)
+        {
+            return await dbConnection.Table<dbRecipe>().Where(r => r.Id == recipeId).FirstOrDefaultAsync();
+        }
+
         public async Task<List<Recipe>> GetRecipes(int userId)
         {
             List<Recipe> returnList = new List<Recipe>();
@@ -133,6 +139,15 @@ namespace Recipe_Keeper.Database
             return recipeDirections;
         }
 
+        public async Task UpdateRecipe(dbRecipe targetRecipe)
+        {
+            await dbConnection.UpdateAsync(targetRecipe);
+        }
+
+
+
+
+
         public async Task SetRememberMe(dbUser targetUser)
         {
             targetUser.Remembered = true;
@@ -150,6 +165,7 @@ namespace Recipe_Keeper.Database
             targetUser.Remembered = false;
             await dbConnection.UpdateAsync(targetUser);
         }
+
 
         //Create the default tables in the SQLite database.
         public async Task CreateDefaultTables()

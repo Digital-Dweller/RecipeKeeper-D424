@@ -18,6 +18,7 @@ namespace Recipe_Keeper.Classes
         public UserSession(DatabaseService databaseService)
         {
             this.databaseService = databaseService;
+            UserRecipes = new List<Recipe>();
         }
         public async Task Login(dbUser user)
         {

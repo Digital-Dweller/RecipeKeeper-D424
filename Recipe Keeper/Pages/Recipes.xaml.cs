@@ -1,6 +1,8 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using Recipe_Keeper.Classes;
+using Recipe_Keeper.Controls;
+using Recipe_Keeper.Database;
 
 namespace Recipe_Keeper.Pages;
 
@@ -8,24 +10,62 @@ public partial class Recipes : ContentPage
 {
     private IServiceProvider ServiceProvider;
     private readonly UserSession userSession;
-    public Recipes(IServiceProvider serviceProvider, UserSession userSession)
+    private DatabaseService databaseService;
+
+    public Recipes(IServiceProvider serviceProvider, UserSession userSession, DatabaseService databaseService)
 	{
 		InitializeComponent();
         ServiceProvider = serviceProvider;
         this.userSession = userSession;
+        this.databaseService = databaseService;
         BindingContext = this;
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        foreach (Recipe recipe in userSession.UserRecipes) 
+        Console.WriteLine("Checking recipe count.");
+        Console.WriteLine($"User count: {userSession.UserRecipes.Count}");
+        if (userSession.UserRecipes.Count > 0)
         {
-            
-        }
+            foreach (Recipe recipe in userSession.UserRecipes)
+            {
+                Console.WriteLine("Recipe found: " + recipe.Title);
+                Console.WriteLine("Recipe imgpath: " + recipe.ImagePath);
+
+
+                var newRecipeCard = ServiceProvider.GetService<RecipeCard>();
+                if (recipe.ImagePath == string.Empty)
+                { newRecipeCard.ImageSourceBinding = "food.svg"; }
+                else
+                { newRecipeCard.ImageSourceBinding = recipe.ImagePath; }
+                newRecipeCard.TitleBinding = recipe.Title;
+                if (recipe.Favorited)
+                { newRecipeCard.FavoriteImageBinding = "favorites_filled.svg"; }
+                else
+                { newRecipeCard.FavoriteImageBinding = "favorites_emptyblack.svg"; }
+                newRecipeCard.FavoriteCommandBinding = new Command(() => { onClick_Favorited(recipe, newRecipeCard); });
+                newRecipeCard.DescriptionBinding = recipe.Description;
+                ContentSection.Children.Add(newRecipeCard);
+            }
+        }    
     }
 
-
+    private async void onClick_Favorited(Recipe targetRecipe, RecipeCard recipeCard)
+    {
+        dbRecipe dbTargetRecipe = await databaseService.GetRecipe(targetRecipe.Id);
+        if (!targetRecipe.Favorited)
+        { 
+            recipeCard.FavoriteImageBinding = "favorites_filled.svg";
+            dbTargetRecipe.Favorited = true;
+        }
+        else
+        { 
+            recipeCard.FavoriteImageBinding = "favorites_emptyblack.svg";
+            dbTargetRecipe.Favorited = true;
+        }
+        await databaseService.UpdateRecipe(dbTargetRecipe);
+    }
     private async void onClick_Logout(object sender, EventArgs e)
     {
         await userSession.Logout();

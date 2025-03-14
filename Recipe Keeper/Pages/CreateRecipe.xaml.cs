@@ -43,7 +43,7 @@ public partial class CreateRecipe : ContentPage
 
             // Load the image into the UI
             using var stream = await photo.OpenReadAsync();
-            string imagePath = photo.FullPath;
+            imagePath = photo.FullPath;
             recipeImage.Source = imagePath;
             photoText1.Text = string.Empty;
             photoText2.Text = string.Empty;
@@ -53,7 +53,7 @@ public partial class CreateRecipe : ContentPage
         { await DisplayAlert("Error", $"An error occurred: {exception.Message}", "Ok"); }
     }
 
-    private async void OnClick_AddIngredient(object sender, EventArgs e)
+    private void OnClick_AddIngredient(object sender, EventArgs e)
     {
         Grid UIContainer = new Grid
         {
@@ -76,7 +76,7 @@ public partial class CreateRecipe : ContentPage
                 {
                     // save the file into local storage
                     string localFilePath = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
-
+                    imagePath = localFilePath;
                     using Stream sourceStream = await photo.OpenReadAsync();
                     using FileStream localFileStream = File.OpenWrite(localFilePath);
 
@@ -208,6 +208,7 @@ public partial class CreateRecipe : ContentPage
 
     private async void onClick_SaveRecipe(object sender, EventArgs e)
     {
+        Console.WriteLine("Image path: " + imagePath);
         if (input_Title.InputValue == string.Empty || input_Author.InputValue == string.Empty || input_Category.SelectedItem.ToString() == string.Empty || input_Description.Text == string.Empty)
         { await DisplayAlert("Incomplete Information", "Please make sure to complete each input field.", "Confirm"); }
         else 
