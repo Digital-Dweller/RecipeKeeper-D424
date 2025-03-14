@@ -1,7 +1,8 @@
 using Recipe_Keeper.Classes;
+using Recipe_Keeper.Controls;
+using Recipe_Keeper.Database;
 using System.Windows.Input;
 using Recipe_Keeper.Classes.Utilities;
-using Recipe_Keeper.Database;
 
 namespace Recipe_Keeper.Pages;
 
@@ -9,17 +10,49 @@ public partial class Favorites : ContentPage
 {
     private IServiceProvider ServiceProvider;
     private readonly UserSession userSession;
-    public Favorites(IServiceProvider serviceProvider, UserSession userSession)
+    private readonly DatabaseService databaseService;
+    public Favorites(IServiceProvider serviceProvider, UserSession userSession, DatabaseService databaseService)
 	{
 		InitializeComponent();
         ServiceProvider = serviceProvider;
         this.userSession = userSession;
+        this.databaseService = databaseService;
         BindingContext = this;
     }
-    protected override async void OnAppearing()
+    protected override void OnAppearing()
 	{
         base.OnAppearing();
+        ContentSection.Clear();
+        if (userSession.UserRecipes.Count > 0)
+        {
+            foreach (Recipe recipe in userSession.UserRecipes)
+            {
+                if (recipe.Favorited)
+                {
+                    var newRecipeCard = ServiceProvider.GetService<RecipeCard>();
+                    if (recipe.ImagePath == string.Empty)
+                    { newRecipeCard.ImageSourceBinding = "food.svg"; }
+                    else
+                    { newRecipeCard.ImageSourceBinding = recipe.ImagePath; }
+                    newRecipeCard.TitleBinding = recipe.Title;
+                    newRecipeCard.FavoriteImageBinding = "favorites_filled.svg";
+                    newRecipeCard.FavoriteCommandBinding = new Command(() => { onClick_Favorited(recipe, newRecipeCard); });
+                    newRecipeCard.DescriptionBinding = recipe.Description;
+                    ContentSection.Children.Add(newRecipeCard);
+                }
+            }
+        }
     }
+
+    private async void onClick_Favorited(Recipe targetRecipe, RecipeCard recipeCard)
+    {
+        dbRecipe dbTargetRecipe = await databaseService.GetRecipe(targetRecipe.Id);
+        dbTargetRecipe.Favorited = false;
+        ContentSection.Children.Remove(recipeCard);
+        await databaseService.UpdateRecipe(dbTargetRecipe);
+        await userSession.UpdateUserRecipes();
+    }
+
 
     private async void onClick_Logout(object sender, EventArgs e)
     {

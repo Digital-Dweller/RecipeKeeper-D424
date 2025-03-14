@@ -24,16 +24,10 @@ public partial class Recipes : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        Console.WriteLine("Checking recipe count.");
-        Console.WriteLine($"User count: {userSession.UserRecipes.Count}");
         if (userSession.UserRecipes.Count > 0)
         {
             foreach (Recipe recipe in userSession.UserRecipes)
             {
-                Console.WriteLine("Recipe found: " + recipe.Title);
-                Console.WriteLine("Recipe imgpath: " + recipe.ImagePath);
-
-
                 var newRecipeCard = ServiceProvider.GetService<RecipeCard>();
                 if (recipe.ImagePath == string.Empty)
                 { newRecipeCard.ImageSourceBinding = "food.svg"; }
