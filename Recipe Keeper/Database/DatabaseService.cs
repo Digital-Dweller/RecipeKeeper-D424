@@ -75,9 +75,9 @@ namespace Recipe_Keeper.Database
             else { return false; }
         }
 
-        public async Task<bool> IsRecipe(string recipeName)
+        public async Task<bool> IsRecipe(string recipeName, int userId)
         {
-            var targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName).FirstOrDefaultAsync();
+            var targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName && r.UserId == userId).FirstOrDefaultAsync();
             if (targetRecipe != null) { return true; }
             else { return false; }
         }
@@ -88,9 +88,9 @@ namespace Recipe_Keeper.Database
             return targetUser;
         }
 
-        public async Task<int> GetRecipeID(string recipeName)
+        public async Task<int> GetRecipeID(string recipeName, int userId)
         {
-            bool recipeExists = await IsRecipe(recipeName);
+            bool recipeExists = await IsRecipe(recipeName, userId);
             if (recipeExists != null) 
             {
                 dbRecipe targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName).FirstOrDefaultAsync();

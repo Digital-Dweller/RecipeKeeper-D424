@@ -221,14 +221,14 @@ public partial class CreateRecipe : ContentPage
                 { await DisplayAlert("Incomplete Information", "No directions have been added to the recipe. Add directions before continuing.", "Confirm"); }
                 else
                 {
-                    bool recipeExists = await databaseService.IsRecipe(input_Title.InputValue);
+                    bool recipeExists = await databaseService.IsRecipe(input_Title.InputValue, userSession.id);
                     if (recipeExists)
                     { await DisplayAlert("Invalid Recipe Name", $"A recipe with the title \"{input_Title.InputValue}\" already exists.", "Confirm"); }
                     else
                     {
                         dbRecipe newRecipe = new dbRecipe { Title = input_Title.InputValue, Author = input_Author.InputValue, Description = input_Description.Text, Category = input_Category.SelectedItem.ToString(), Favorited = false, ImagePath = imagePath, UserId = userSession.id };
                         await databaseService.AddRecipe(newRecipe);
-                        int recipeId = await databaseService.GetRecipeID(input_Title.InputValue);
+                        int recipeId = await databaseService.GetRecipeID(input_Title.InputValue, userSession.id);
                         foreach (dbIngredient ingredient in RecipeIngredients)
                         {
                             ingredient.Id = recipeId;
@@ -241,7 +241,8 @@ public partial class CreateRecipe : ContentPage
                             Direction.OrderPosition = posCount++;
                             await databaseService.AddDirection(Direction);
                         }
-                        Navigation.PopAsync();
+                        await userSession.UpdateUserRecipes();
+                        await Navigation.PopAsync();
                     }
 
                 }

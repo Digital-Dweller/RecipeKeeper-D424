@@ -62,9 +62,10 @@ public partial class Recipes : ContentPage
         else
         { 
             recipeCard.FavoriteImageBinding = "favorites_emptyblack.svg";
-            dbTargetRecipe.Favorited = true;
+            dbTargetRecipe.Favorited = false;
         }
         await databaseService.UpdateRecipe(dbTargetRecipe);
+        await userSession.UpdateUserRecipes();
     }
     private async void onClick_Logout(object sender, EventArgs e)
     {

@@ -46,5 +46,11 @@ namespace Recipe_Keeper.Classes
             }
         }
 
+        public async Task UpdateUserRecipes()
+        {
+            UserRecipes.Clear();
+            await GetUserRecipes();
+        }
+
     }
 }
