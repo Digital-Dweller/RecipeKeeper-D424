@@ -61,6 +61,23 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <ScrollView BackgroundColor="#FDF9F3">
+                        <VerticalStackLayout>
+                            <Label Text="Profile" FontSize="20" FontAttributes="Bold" TextColor="#9E3F41" Margin="10,20,0,0"/>
+                            <Label Text="Change Username" FontSize="16" FontAttributes="Bold" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,-10"/>
+                            <controls:TextInput x:Name="username" Title="Username" Placeholder="Username..."/>
+                            <controls:TextInput x:Name="usernamePassword" Title="Password" Placeholder="Password..."/>
+                            <Button Text="Update Username" Clicked="onClick_UpdateUsername" TextColor="Black" WidthRequest="160" Margin="0,10,0,10"  BackgroundColor="White" BorderWidth="1" BorderColor="Black"/>
+                            <Label Text="Change Email" FontSize="16" FontAttributes="Bold" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,-10"/>
+                            <controls:TextInput x:Name="email" Title="Email" Placeholder="Email..."/>
+                            <controls:TextInput x:Name="emailPassword" Title="Password" Placeholder="Password..."/>
+                            <Button Text="Update Email" Clicked="onClick_UpdateEmail" TextColor="Black" WidthRequest="160" Margin="0,10,0,10"  BackgroundColor="White" BorderWidth="1" BorderColor="Black"/>
+                            <Label Text="Change Password" FontSize="16" FontAttributes="Bold" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,-10"/>
+                            <controls:TextInput x:Name="currPassword" Title="Current Password" Placeholder="Password..."/>
+                            <controls:TextInput x:Name="confirmCurrPassword" Title="Confirm Current Password" Placeholder="Password..."/>
+                            <controls:TextInput x:Name="newPassword" Title="New Password" Placeholder="Password..."/>
+                            <controls:TextInput x:Name="confirmNewPassword" Title="Confirm New Password" Placeholder="Password..."/>
+                            <Button Text="Change Password" Clicked="onClick_UpdatePassword" TextColor="Black" WidthRequest="160" Margin="0,10,0,20" BackgroundColor="White" BorderWidth="1" BorderColor="Black"/>
+                        </VerticalStackLayout>
                     </ScrollView>
                     <BoxView 
                         Grid.Column="1" 

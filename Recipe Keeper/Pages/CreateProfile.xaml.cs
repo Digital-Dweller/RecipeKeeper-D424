@@ -32,19 +32,14 @@ public partial class CreateProfile : ContentPage
         {
             if (input_Pass.InnerEntry.Text == input_ConfirmPass.InnerEntry.Text) 
             {
-                Console.WriteLine("Checking if user exists.");
                 bool userExists = await databaseService.IsUser(input_Username.InnerEntry.Text);
                 if (!userExists) 
                 {
-                    Console.WriteLine("Hashing password.");
                     string passHash = PasswordHandler.HashPassword(input_Pass.InnerEntry.Text);
                     dbUser newUser = new dbUser(input_Username.InnerEntry.Text, input_Email.InnerEntry.Text, passHash);
-                    Console.WriteLine("Adding new user to database.");
                     await databaseService.AddUser(newUser);
                     dbUser addedUser = await databaseService.GetUserFromUsername(input_Username.InnerEntry.Text);
-                    Console.WriteLine("Logging user in using usersession.");
                     userSession.Login(addedUser);
-                    Console.WriteLine("Navigating to favorites.");
                     //Pop all the pages from the stack and add the favorites page to the top.
                     var favorites_page = ServiceProvider.GetService<Favorites>();
                     await Application.Current.MainPage.Navigation.PopToRootAsync();

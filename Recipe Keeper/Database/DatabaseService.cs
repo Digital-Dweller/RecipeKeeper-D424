@@ -42,8 +42,6 @@ namespace Recipe_Keeper.Database
         public async Task<bool> UserLogin(string username, string pass)
         {
             dbUser targetUser = await GetUserFromUsername(username);
-
-            
             return PasswordHandler.PasswordCompare(pass, targetUser.Password);
         }
 
@@ -80,6 +78,12 @@ namespace Recipe_Keeper.Database
             var targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName && r.UserId == userId).FirstOrDefaultAsync();
             if (targetRecipe != null) { return true; }
             else { return false; }
+        }
+
+        public async Task<dbUser> GetUserFromId(int id)
+        {
+            dbUser targetUser = await dbConnection.Table<dbUser>().Where(u => u.id == id).FirstOrDefaultAsync();
+            return targetUser;
         }
 
         public async Task<dbUser> GetUserFromUsername(string username)
@@ -144,7 +148,28 @@ namespace Recipe_Keeper.Database
             await dbConnection.UpdateAsync(targetRecipe);
         }
 
-
+        public async Task UpdateUser(dbUser targetUser)
+        {
+            await dbConnection.UpdateAsync(targetUser);
+        }
+        public async Task UpdateUsername(int userId, string username)
+        {
+            dbUser targetUser = await GetUserFromId(userId);
+            targetUser.Username = username;
+            await UpdateUser(targetUser);
+        }
+        public async Task UpdateEmail(int userId, string email)
+        {
+            dbUser targetUser = await GetUserFromId(userId);
+            targetUser.Email = email;
+            await UpdateUser(targetUser);
+        }
+        public async Task UpdatePassword(int userId, string newPassHash)
+        {
+            dbUser targetUser = await GetUserFromId(userId);
+            targetUser.Password = newPassHash;
+            await UpdateUser(targetUser);
+        }
 
 
 
@@ -214,6 +239,16 @@ namespace Recipe_Keeper.Database
                 return false;
             }
         }
+        public async Task PrintAllUsers()
+        {
+            List<dbUser> allUsers = await dbConnection.Table<dbUser>().ToListAsync();
+            if (allUsers.Count > 0)
+            {
+                foreach (dbUser user in allUsers) 
+                { Console.WriteLine($"Username:{user.Username} Email:{user.Email} Password:{user.Password} Remembered:{user.Remembered}"); }
+            }
+        }
+
 
     }    
 
