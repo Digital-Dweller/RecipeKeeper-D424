@@ -61,6 +61,16 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <ScrollView BackgroundColor="#FDF9F3">
+                        <VerticalStackLayout>
+                            <Label Text="Search Recipes" TextColor="#9E3F41" FontSize="20" FontAttributes="Bold" Margin="10,20,0,0"/>
+                            <HorizontalStackLayout>
+                                <Border Stroke="Black" StrokeThickness="1" BackgroundColor="White" Margin="10,10,0,0">
+                                    <Entry x:Name="searchInput" Placeholder="Search..." HeightRequest="50" WidthRequest="220"/>
+                                </Border>
+                                <ImageButton Source="search.svg" HeightRequest="50" WidthRequest="50" Clicked="onClick_SearchRecipes"/>
+                            </HorizontalStackLayout>
+                            <VerticalStackLayout x:Name="contentSection"/>
+                        </VerticalStackLayout>
                     </ScrollView>
                     <BoxView 
                         Grid.Column="1" 
