@@ -6,18 +6,19 @@ using Recipe_Keeper.Database;
 
 namespace Recipe_Keeper.Pages;
 
-public partial class Recipes : ContentPage
+public partial class EditRecipes : ContentPage
 {
     private IServiceProvider ServiceProvider;
     private readonly UserSession userSession;
     private DatabaseService databaseService;
-
-    public Recipes(IServiceProvider serviceProvider, UserSession userSession, DatabaseService databaseService)
+    private List<Tuple<Grid, CheckBox, string>> RecipeCards;
+    public EditRecipes(IServiceProvider serviceProvider, UserSession userSession, DatabaseService databaseService)
 	{
 		InitializeComponent();
         ServiceProvider = serviceProvider;
         this.userSession = userSession;
         this.databaseService = databaseService;
+        RecipeCards = new List<Tuple<Grid, CheckBox, string>>();
         BindingContext = this;
     }
 
@@ -28,6 +29,21 @@ public partial class Recipes : ContentPage
         {
             foreach (Recipe recipe in userSession.UserRecipes)
             {
+                Grid containerGrid = new Grid 
+                {
+                    ColumnDefinitions = 
+                    {
+                        new ColumnDefinition { Width = GridLength.Auto },
+                        new ColumnDefinition { Width = 40 }
+                    },
+                    RowDefinitions =
+                    {
+                        new RowDefinition { Height = GridLength.Auto },
+                        new RowDefinition { Height = GridLength.Auto }
+                    }
+                };
+                
+
                 var newRecipeCard = ServiceProvider.GetService<RecipeCard>();
                 if (recipe.ImagePath == string.Empty)
                 { newRecipeCard.ImageSourceBinding = "food.svg"; }
@@ -40,35 +56,65 @@ public partial class Recipes : ContentPage
                 { newRecipeCard.FavoriteImageBinding = "favorites_emptyblack.svg"; }
                 newRecipeCard.FavoriteCommandBinding = new Command(() => { onClick_Favorited(recipe, newRecipeCard); });
                 newRecipeCard.DescriptionBinding = recipe.Description;
-                ContentSection.Children.Add(newRecipeCard);
+
+                CheckBox deleteCheckBox = new CheckBox 
+                {
+                    IsChecked = false
+                };
+
+                ImageButton editRecipeButton = new ImageButton 
+                {
+                    Source = "edit.svg",
+                    Margin = new Thickness(5,0,0,0),
+                    VerticalOptions = LayoutOptions.Center
+                };
+
+
+                containerGrid.Children.Add(newRecipeCard);
+                containerGrid.SetRowSpan(newRecipeCard, 2);
+                containerGrid.Children.Add(deleteCheckBox);
+                containerGrid.SetColumn(deleteCheckBox, 1);
+                containerGrid.Children.Add(editRecipeButton);
+                containerGrid.SetColumn(editRecipeButton, 1);
+                containerGrid.SetRow(editRecipeButton, 1);
+
+                ContentSection.Children.Add(containerGrid);
+
+                //Add container and checkbox references to the RecipeCards list.
+                RecipeCards.Add(new Tuple<Grid, CheckBox, string>(containerGrid, deleteCheckBox, recipe.Title));
             }
-        }    
+        }
+    }
+
+    private async void onClick_DeleteSelected(object sender, EventArgs e)
+    {
+        var pendingRemoval = RecipeCards.Where(t => t.Item2.IsChecked).ToList();
+        foreach (var recipeCardPair in pendingRemoval)
+        {
+            ContentSection.Children.Remove(recipeCardPair.Item1);
+            RecipeCards.Remove(recipeCardPair);
+            int recipeId = await databaseService.GetRecipeID(recipeCardPair.Item3, userSession.id);
+            await databaseService.DeleteRecipe(recipeId);
+            await userSession.UpdateUserRecipes();
+        }
     }
 
     private async void onClick_Favorited(Recipe targetRecipe, RecipeCard recipeCard)
     {
         dbRecipe dbTargetRecipe = await databaseService.GetRecipe(targetRecipe.Id);
         if (!targetRecipe.Favorited)
-        { 
+        {
             recipeCard.FavoriteImageBinding = "favorites_filled.svg";
             dbTargetRecipe.Favorited = true;
         }
         else
-        { 
+        {
             recipeCard.FavoriteImageBinding = "favorites_emptyblack.svg";
             dbTargetRecipe.Favorited = false;
         }
         await databaseService.UpdateRecipe(dbTargetRecipe);
         await userSession.UpdateUserRecipes();
     }
-
-    private async void onClick_EditRecipe(object sender, EventArgs e)
-    {
-        var editRecipe_page = ServiceProvider.GetService<EditRecipes>();
-        Navigation.InsertPageBefore(editRecipe_page, Navigation.NavigationStack.Last());
-        await Navigation.PopAsync();
-    }
-
     private async void onClick_Logout(object sender, EventArgs e)
     {
         await userSession.Logout();
@@ -102,4 +148,5 @@ public partial class Recipes : ContentPage
         Navigation.InsertPageBefore(profile_page, Navigation.NavigationStack.Last());
         await Navigation.PopAsync();
     }
+
 }

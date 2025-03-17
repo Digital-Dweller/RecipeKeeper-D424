@@ -38,6 +38,9 @@
     <MauiXaml Update="Pages\CreateRecipe.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\EditRecipes.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\Favorites.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

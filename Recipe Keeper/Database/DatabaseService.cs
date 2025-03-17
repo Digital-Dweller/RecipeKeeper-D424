@@ -171,7 +171,11 @@ namespace Recipe_Keeper.Database
             await UpdateUser(targetUser);
         }
 
-
+        public async Task DeleteRecipe(int recipeId)
+        {
+            dbRecipe targetRecipe = await GetRecipe(recipeId);
+            await dbConnection.DeleteAsync(targetRecipe);
+        }
 
         public async Task SetRememberMe(dbUser targetUser)
         {

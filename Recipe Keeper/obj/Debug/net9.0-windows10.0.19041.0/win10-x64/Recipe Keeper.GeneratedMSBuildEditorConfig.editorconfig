@@ -100,6 +100,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Create
 build_metadata.AdditionalFiles.TargetPath = Pages\CreateRecipe.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\CreateRecipe.xaml
 
+[C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/EditRecipes.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.EditRecipes.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\EditRecipes.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\EditRecipes.xaml
+
 [C:/Users/alexh/source/repos/d424-software-engineering-capstone/Recipe Keeper/Pages/Favorites.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Recipe_Keeper.Pages.Favorites.xaml

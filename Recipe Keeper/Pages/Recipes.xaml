@@ -60,7 +60,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <ScrollView BackgroundColor="#FDF9F3">
-                        <VerticalStackLayout x:Name="ContentSection" Margin="0,10,0,0">
+                        <VerticalStackLayout x:Name="ContentSection" Margin="10,10,10,10">
                             
                         </VerticalStackLayout>
                     </ScrollView>
@@ -87,7 +87,7 @@
             </Grid.ColumnDefinitions>
             <controls:UiNavButton Title="Logout" Source="logout.svg" HorizontalOptions="Start" Margin="5,0,0,0"/>
             <controls:UiNavButton Grid.Column="2" Tapped="onClick_Favorites" Title="Home" Source="home.svg" Margin="-2,0,0,0"/>
-            <controls:UiNavButton Grid.Column="4" Title="Edit" Source="edit.svg" HorizontalOptions="End" Margin="0,0,5,0"/>
+            <controls:UiNavButton Grid.Column="4" Tapped="onClick_EditRecipe" Title="Edit" Source="edit.svg" HorizontalOptions="End" Margin="0,0,5,0"/>
         </Grid>
     </Grid>
 </ContentPage>

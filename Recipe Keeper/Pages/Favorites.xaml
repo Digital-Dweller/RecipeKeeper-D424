@@ -60,7 +60,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <ScrollView BackgroundColor="#FDF9F3">
-                        <VerticalStackLayout x:Name="ContentSection" Margin="0,10,0,0"/>
+                        <VerticalStackLayout x:Name="ContentSection" Margin="10,10,10,10"/>
                     </ScrollView>
                     <BoxView 
                         Grid.Column="1" 
