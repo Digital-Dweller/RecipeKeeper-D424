@@ -227,7 +227,6 @@ namespace Recipe_Keeper.Database
             await dbConnection.CreateTableAsync<dbDirection>();
             await dbConnection.CreateTableAsync<dbIngredient>();
             await dbConnection.CreateTableAsync<dbRecipe>();
-            await dbConnection.CreateTableAsync<dbUnit>();
             await dbConnection.CreateTableAsync<dbUser>();
         }
 
