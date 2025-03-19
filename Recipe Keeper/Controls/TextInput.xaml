@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Recipe_Keeper.Classes.Utilities"
              x:Class="Recipe_Keeper.Controls.TextInput">
     <Border
         Stroke="Black"
@@ -21,7 +22,11 @@
                 x:Name="innerEntry"
                 FontSize="24"
                 MaxLength="20"
-                Margin="10,0,0,0"/>
+                Margin="10,0,0,0">
+                <Entry.Behaviors>
+                    <behaviors:TextInputBehavior/>
+                </Entry.Behaviors>
+            </Entry>
         </VerticalStackLayout>
     </Border>
 </ContentView>
