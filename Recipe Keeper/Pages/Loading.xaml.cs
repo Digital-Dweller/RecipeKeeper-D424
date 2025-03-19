@@ -28,8 +28,10 @@ public partial class Loading : ContentPage
         //Check if there is a user with a saved login enabled. 
         var userRemembered = await databaseService.CheckRememberMe();
 
+        //Run unit tests.
+        UnitTests runTests = new UnitTests(databaseService);
+        await runTests.RunAllTests();
 
-        //write conditonal stattment check
         if (userRemembered != null)
         {
             await userSession.Login(userRemembered);

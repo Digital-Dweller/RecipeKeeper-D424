@@ -196,6 +196,11 @@ namespace Recipe_Keeper.Database
         {
             await dbConnection.DeleteAsync(targetDirection);
         }
+        public async Task DeleteUser(dbUser targetUser)
+        {
+            await dbConnection.DeleteAsync(targetUser);
+        }
+
 
         public async Task SetRememberMe(dbUser targetUser)
         {
