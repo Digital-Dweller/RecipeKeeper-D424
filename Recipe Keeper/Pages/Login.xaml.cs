@@ -9,20 +9,23 @@ public partial class Login : ContentPage
     private IServiceProvider ServiceProvider;
     private readonly DatabaseService databaseService;
     private readonly UserSession userSession;
-    public Login(IServiceProvider serviceProvider, DatabaseService databaseService, UserSession userSession)
+    private readonly LogHandler logger;
+
+    public Login(IServiceProvider serviceProvider, DatabaseService databaseService, UserSession userSession, LogHandler logger)
 	{
 		InitializeComponent();
         ServiceProvider = serviceProvider;
         this.databaseService = databaseService;
         this.userSession = userSession;
+        this.logger = logger;
         input_Pass.InnerEntry.IsPassword = true;
     }
 
     private async void onClick_NewUser(object sender, EventArgs e)
     {
         var createProfile_page = ServiceProvider.GetService<CreateProfile>();
-        await Application.Current.MainPage.Navigation.PopToRootAsync();
-        await Application.Current.MainPage.Navigation.PushAsync(createProfile_page);
+        await Navigation.PopToRootAsync();
+        await Navigation.PushAsync(createProfile_page);
     }
 
 
@@ -40,11 +43,19 @@ public partial class Login : ContentPage
                 if (rememberMeCheckBox.IsChecked)
                 { await databaseService.SetRememberMe(user); }
                 await userSession.Login(user);
-
+                await logger.LogMessage($"User: {user.Username} logged in successfully");
             }
-            else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
+            else 
+            { 
+                await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm");
+                await logger.LogMessage($"Failed login attempt for username: {input_Username.InnerEntry.Text}");
+            }
         }
-        else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
+        else 
+        { 
+            await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm");
+            await logger.LogMessage($"Failed login attempt for username: {input_Username.InnerEntry.Text}");
+        }
     }
 
 }

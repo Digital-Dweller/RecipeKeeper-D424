@@ -26,6 +26,7 @@ namespace Recipe_Keeper.Classes
             this.username = user.Username;
             IsLoggedIn = true;
             await GetUserRecipes();
+
         }
         public async Task Logout()
         {

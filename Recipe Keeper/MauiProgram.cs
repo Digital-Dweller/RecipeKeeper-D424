@@ -4,6 +4,7 @@ using Recipe_Keeper.Classes;
 using Recipe_Keeper.Database;
 using Recipe_Keeper.Pages;
 using Recipe_Keeper.Controls;
+using Recipe_Keeper.Classes.Utilities;
 
 namespace Recipe_Keeper
 {
@@ -27,12 +28,20 @@ namespace Recipe_Keeper
                 return new DatabaseService(dbPath);
             });
 
+            //Add the log handler to the DI container.
+            builder.Services.AddSingleton<LogHandler>(s =>
+            {
+                return new LogHandler();
+            });
+
             //Add UserSession to the DI container.
             builder.Services.AddSingleton<UserSession>(s =>
             {
                 var databaseService = s.GetRequiredService<DatabaseService>();
                 return new UserSession(databaseService);
             });
+
+
 
             //Add pages to the DI container.
             builder.Services.AddTransient<Loading>();

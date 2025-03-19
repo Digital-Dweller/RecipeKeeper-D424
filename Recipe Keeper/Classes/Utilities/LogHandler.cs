@@ -17,18 +17,24 @@ namespace Recipe_Keeper.Classes.Utilities
         }
 
         //Log an event to the log file.
-        public async Task LogAsync(string message)
+        public async Task LogMessage(string message)
         {
             string logMessage = $"{DateTime.Now}: {message}{Environment.NewLine}";
             await File.AppendAllTextAsync(filePath, logMessage);
         }
 
         //Print the log content to the screen.
-        public async Task<string> ReadLogsAsync()
+        public async Task ReadLogs()
         {
             if (File.Exists(filePath))
-            { return await File.ReadAllTextAsync(filePath); }
-            else { return "No logs found."; }            
+            {
+                var logLines = await File.ReadAllLinesAsync(filePath);
+                int lineNumber = 0;
+                foreach (var line in logLines)
+                { Console.WriteLine($"{++lineNumber}: " + line); }
+            }
+            else
+            { Console.WriteLine("No logs found."); }
         }
     }
 }
