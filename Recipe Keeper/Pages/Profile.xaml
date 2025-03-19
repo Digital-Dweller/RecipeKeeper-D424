@@ -68,7 +68,7 @@
                             <controls:TextInput x:Name="usernamePassword" Title="Password" Placeholder="Password..."/>
                             <Button Text="Update Username" Clicked="onClick_UpdateUsername" TextColor="Black" WidthRequest="160" Margin="0,10,0,10"  BackgroundColor="White" BorderWidth="1" BorderColor="Black"/>
                             <Label Text="Change Email" FontSize="16" FontAttributes="Bold" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,-10"/>
-                            <controls:TextInput x:Name="email" Title="Email" Placeholder="Email..."/>
+                            <controls:TextInput x:Name="emailInput" Title="Email" Placeholder="Email..."/>
                             <controls:TextInput x:Name="emailPassword" Title="Password" Placeholder="Password..."/>
                             <Button Text="Update Email" Clicked="onClick_UpdateEmail" TextColor="Black" WidthRequest="160" Margin="0,10,0,10"  BackgroundColor="White" BorderWidth="1" BorderColor="Black"/>
                             <Label Text="Change Password" FontSize="16" FontAttributes="Bold" TextColor="#9E3F41" HorizontalOptions="Center" Margin="0,20,0,-10"/>

@@ -82,16 +82,21 @@ public partial class Profile : ContentPage
         bool response = await DisplayAlert("Change Confirmation", "Are you sure you want to update the email?", "Yes", "No");
         if (response)
         {
-            if (email.InputValue != string.Empty || emailPassword.InputValue != string.Empty)
+            if (emailInput.InputValue != string.Empty || emailPassword.InputValue != string.Empty)
             {
-                bool validLogin = await databaseService.UserLogin(userSession.username, emailPassword.InputValue);
-                if (validLogin)
+                bool validEmail = EmailValidation.isValid(emailInput.InnerEntry.Text);
+                if (validEmail)
                 {
-                    await databaseService.UpdateEmail(userSession.id, email.InputValue);
-                    await DisplayAlert("Update Success", "The email was updated successfully.", "Confirm");
-                    ClearAllFields();
+                    bool validLogin = await databaseService.UserLogin(userSession.username, emailPassword.InputValue);
+                    if (validLogin)
+                    {
+                        await databaseService.UpdateEmail(userSession.id, emailInput.InputValue);
+                        await DisplayAlert("Update Success", "The email was updated successfully.", "Confirm");
+                        ClearAllFields();
+                    }
+                    else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
                 }
-                else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
+                else { await DisplayAlert("Email Error", "The email address provided is not a valid email.", "Confirm"); }
             }
             else { await DisplayAlert("Input Error", "Incomplete information. Make sure to complete email and password fields to update the email.", "Confirm"); }
         }
@@ -101,7 +106,7 @@ public partial class Profile : ContentPage
     {
         username.InputValue = string.Empty;
         usernamePassword.InputValue = string.Empty;
-        email.InputValue = string.Empty;
+        emailInput.InputValue = string.Empty;
         emailPassword.InputValue = string.Empty;
         currPassword.InputValue = string.Empty;
         confirmCurrPassword.InputValue = string.Empty;
