@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Recipe_Keeper.Classes;
 using Recipe_Keeper.Controls;
 using Recipe_Keeper.Database;
+using Recipe_Keeper.Classes.Utilities;
 
 namespace Recipe_Keeper.Pages;
 
@@ -12,13 +13,16 @@ public partial class EditRecipes : ContentPage
     private readonly UserSession userSession;
     private DatabaseService databaseService;
     private List<Tuple<Grid, CheckBox, string>> RecipeCards;
-    public EditRecipes(IServiceProvider serviceProvider, UserSession userSession, DatabaseService databaseService)
+    private readonly LogHandler logger;
+
+    public EditRecipes(IServiceProvider serviceProvider, UserSession userSession, DatabaseService databaseService, LogHandler logger)
 	{
 		InitializeComponent();
         ServiceProvider = serviceProvider;
         this.userSession = userSession;
         this.databaseService = databaseService;
         RecipeCards = new List<Tuple<Grid, CheckBox, string>>();
+        this.logger = logger;
         BindingContext = this;
     }
 
@@ -95,6 +99,7 @@ public partial class EditRecipes : ContentPage
             int recipeId = await databaseService.GetRecipeID(recipeCardPair.Item3, userSession.id);
             await databaseService.DeleteRecipe(recipeId);
             await userSession.UpdateUserRecipes();
+            await logger.LogMessage($"User: {userSession.username} deleted the recipe: {recipeCardPair.Item3} from the database.");
         }
     }
 

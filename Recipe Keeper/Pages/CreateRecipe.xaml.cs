@@ -15,11 +15,13 @@ public partial class CreateRecipe : ContentPage
     private readonly UserSession userSession;
     private string imagePath = string.Empty;
     private DatabaseService databaseService;
+    private readonly LogHandler logger;
+
     public List<string> unitsList { get; set; }
     public List<string> categoriesList { get; set; }
     public List<dbIngredient> RecipeIngredients { get; set; }
     public List<dbDirection> RecipeDirections { get; set; }
-    public CreateRecipe(IServiceProvider serviceProvider, UserSession userSession, DatabaseService databaseService)
+    public CreateRecipe(IServiceProvider serviceProvider, UserSession userSession, DatabaseService databaseService, LogHandler logger)
 	{
 		InitializeComponent();
         ServiceProvider = serviceProvider;
@@ -31,6 +33,7 @@ public partial class CreateRecipe : ContentPage
         RecipeDirections = new List<dbDirection>();
         this.databaseService = databaseService;
         input_Category.IsEnabled = true;
+        this.logger = logger;
         BindingContext = this;
     }
 
@@ -224,6 +227,7 @@ public partial class CreateRecipe : ContentPage
                     {
                         dbRecipe newRecipe = new dbRecipe { Title = input_Title.InputValue, Author = input_Author.InputValue, Description = input_Description.Text, Category = input_Category.SelectedItem.ToString(), Favorited = false, ImagePath = imagePath, UserId = userSession.id };
                         await databaseService.AddRecipe(newRecipe);
+                        await logger.LogMessage($"User: {userSession.username} added the recipe: {newRecipe.Title} to the database.");
                         int recipeId = await databaseService.GetRecipeID(input_Title.InputValue, userSession.id);
                         foreach (dbIngredient ingredient in RecipeIngredients)
                         {
