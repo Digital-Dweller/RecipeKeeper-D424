@@ -53,17 +53,6 @@ public partial class CreateRecipe : ContentPage
         { await DisplayAlert("Error", $"An error occurred: {exception.Message}", "Ok"); }
     }
 
-    private void OnClick_AddIngredient(object sender, EventArgs e)
-    {
-        Grid UIContainer = new Grid
-        {
-            BackgroundColor = Colors.WhiteSmoke,
-            Margin = new Thickness(0, 10, 0, 0),
-            HeightRequest = 80
-        };
-
-    }
-
     private async void OnClick_TakePhoto(object sender, EventArgs e)
     {
         try
@@ -85,6 +74,7 @@ public partial class CreateRecipe : ContentPage
                     photoText1.Text = string.Empty;
                     photoText2.Text = string.Empty;
                     photoBorder.Padding = 0;
+                    photoBorder.WidthRequest = -1;
 
                 }
             }
@@ -206,6 +196,11 @@ public partial class CreateRecipe : ContentPage
         await Navigation.PopAsync();
     }
 
+    private async void onClick_Cancel(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
+
     private async void onClick_SaveRecipe(object sender, EventArgs e)
     {
         Console.WriteLine("Image path: " + imagePath);
@@ -231,13 +226,13 @@ public partial class CreateRecipe : ContentPage
                         int recipeId = await databaseService.GetRecipeID(input_Title.InputValue, userSession.id);
                         foreach (dbIngredient ingredient in RecipeIngredients)
                         {
-                            ingredient.Id = recipeId;
+                            ingredient.RecipeId = recipeId;
                             await databaseService.AddIngredient(ingredient);
                         }
                         int posCount = 0;
                         foreach (dbDirection Direction in RecipeDirections)
                         {
-                            Direction.Id = recipeId;
+                            Direction.RecipeId = recipeId;
                             Direction.OrderPosition = posCount++;
                             await databaseService.AddDirection(Direction);
                         }

@@ -29,10 +29,6 @@ public partial class Loading : ContentPage
         var userRemembered = await databaseService.CheckRememberMe();
 
 
-        //DEBUG
-        await databaseService.PrintAllUsers();
-
-
         //write conditonal stattment check
         if (userRemembered != null)
         {

@@ -80,6 +80,13 @@ namespace Recipe_Keeper.Database
             else { return false; }
         }
 
+        public async Task<bool> IsRecipeTitle(string recipeName, int recipeId, int userId)
+        {
+            var targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName && r.UserId == userId && r.Id != recipeId).FirstOrDefaultAsync();
+            if (targetRecipe != null) { return true; }
+            else { return false; }
+        }
+
         public async Task<dbUser> GetUserFromId(int id)
         {
             dbUser targetUser = await dbConnection.Table<dbUser>().Where(u => u.id == id).FirstOrDefaultAsync();
@@ -94,13 +101,8 @@ namespace Recipe_Keeper.Database
 
         public async Task<int> GetRecipeID(string recipeName, int userId)
         {
-            bool recipeExists = await IsRecipe(recipeName, userId);
-            if (recipeExists != null) 
-            {
-                dbRecipe targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName).FirstOrDefaultAsync();
-                return targetRecipe.Id;
-            }
-            else { return 0; }            
+            var targetRecipe = await dbConnection.Table<dbRecipe>().Where(r => r.Title == recipeName && r.UserId == userId).FirstOrDefaultAsync();
+            return targetRecipe?.Id ?? 0;
         }
 
         public async Task<dbRecipe> GetRecipe(int recipeId)
@@ -132,10 +134,18 @@ namespace Recipe_Keeper.Database
             }
             return returnList;
         }
+        public async Task<dbIngredient> GetIngredient(int IngredientId)
+        {
+            return await dbConnection.Table<dbIngredient>().Where(i => i.Id == IngredientId).FirstOrDefaultAsync();
+        }
         public async Task<List<dbIngredient>> GetIngredients(int recipeId)
         {
             List<dbIngredient> recipeIngredients = await dbConnection.Table<dbIngredient>().Where(i => i.RecipeId == recipeId).ToListAsync();
             return recipeIngredients;
+        }
+        public async Task<dbDirection> GetDirection(int DirectionId)
+        {
+            return await dbConnection.Table<dbDirection>().Where(d => d.Id == DirectionId).FirstOrDefaultAsync();
         }
         public async Task<List<dbDirection>> GetDirections(int recipeId)
         {
@@ -175,6 +185,16 @@ namespace Recipe_Keeper.Database
         {
             dbRecipe targetRecipe = await GetRecipe(recipeId);
             await dbConnection.DeleteAsync(targetRecipe);
+        }
+
+        public async Task DeleteIngredient(dbIngredient targetIngredient)
+        {
+            await dbConnection.DeleteAsync(targetIngredient);
+        }
+
+        public async Task DeleteDirection(dbDirection targetDirection)
+        {
+            await dbConnection.DeleteAsync(targetDirection);
         }
 
         public async Task SetRememberMe(dbUser targetUser)
@@ -252,7 +272,27 @@ namespace Recipe_Keeper.Database
                 { Console.WriteLine($"Username:{user.Username} Email:{user.Email} Password:{user.Password} Remembered:{user.Remembered}"); }
             }
         }
+        public async Task PrintAllRecipes()
+        {
+            Console.WriteLine("Checking recipes");
+            List<dbRecipe> allRecipes = await dbConnection.Table<dbRecipe>().ToListAsync();
+            if (allRecipes.Count > 0)
+            {
+                foreach (dbRecipe Recipe in allRecipes)
+                { Console.WriteLine($"Recipename:{Recipe.Title} RecipeId: {Recipe.Id} UserId: {Recipe.UserId}"); }
+            }
+        }
 
+        public async Task PrintAllIngredients()
+        {
+            Console.WriteLine("Checking ingredients");
+            List<dbIngredient> allIngredients = await dbConnection.Table<dbIngredient>().ToListAsync();
+            if (allIngredients.Count > 0)
+            {
+                foreach (dbIngredient Ingredient in allIngredients)
+                { Console.WriteLine($"Ingredientname:{Ingredient.Title} RecipeId: {Ingredient.RecipeId}"); }
+            }
+        }
 
     }    
 

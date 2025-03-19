@@ -33,7 +33,7 @@ public partial class EditRecipes : ContentPage
                 {
                     ColumnDefinitions = 
                     {
-                        new ColumnDefinition { Width = GridLength.Auto },
+                        new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) },
                         new ColumnDefinition { Width = 40 }
                     },
                     RowDefinitions =
@@ -68,8 +68,7 @@ public partial class EditRecipes : ContentPage
                     Margin = new Thickness(5,0,0,0),
                     VerticalOptions = LayoutOptions.Center
                 };
-
-
+                editRecipeButton.Clicked += (s, e) => onClick_EditRecipe(s, e, recipe);
                 containerGrid.Children.Add(newRecipeCard);
                 containerGrid.SetRowSpan(newRecipeCard, 2);
                 containerGrid.Children.Add(deleteCheckBox);
@@ -97,6 +96,16 @@ public partial class EditRecipes : ContentPage
             await databaseService.DeleteRecipe(recipeId);
             await userSession.UpdateUserRecipes();
         }
+    }
+
+
+    private async void onClick_EditRecipe(object sender, EventArgs e, Recipe targetRecipe)
+    {
+        var editRecipe_page = ServiceProvider.GetService<EditRecipe>();
+        editRecipe_page.targetRecipe = targetRecipe;
+
+        Navigation.InsertPageBefore(editRecipe_page, Navigation.NavigationStack.Last());
+        await Navigation.PopAsync();
     }
 
     private async void onClick_Favorited(Recipe targetRecipe, RecipeCard recipeCard)
@@ -148,5 +157,4 @@ public partial class EditRecipes : ContentPage
         Navigation.InsertPageBefore(profile_page, Navigation.NavigationStack.Last());
         await Navigation.PopAsync();
     }
-
 }

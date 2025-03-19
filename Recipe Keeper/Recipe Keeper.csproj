@@ -103,6 +103,9 @@
 	  <MauiXaml Update="Pages\CreateRecipe.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\EditRecipe.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\EditRecipes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

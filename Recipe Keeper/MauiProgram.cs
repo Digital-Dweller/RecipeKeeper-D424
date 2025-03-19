@@ -45,6 +45,7 @@ namespace Recipe_Keeper
             builder.Services.AddTransient<Recipes>();
             builder.Services.AddTransient<Search>();
             builder.Services.AddTransient<EditRecipes>();
+            builder.Services.AddTransient<EditRecipe>();
 
             //Add controls to the DI container.
             builder.Services.AddTransient<TextInput>();

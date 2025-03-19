@@ -142,7 +142,7 @@
             <controls:UiNavButton Title="Logout" Source="logout.svg" HorizontalOptions="Start" Margin="5,0,0,0"/>
             <controls:UiNavButton Grid.Column="3" Tapped="onClick_Favorites" Title="Home" Source="home.svg" Margin="-37,0,0,0"/>
             <controls:UiNavButton Grid.Column="4" Tapped="onClick_SaveRecipe" Title="Save" Source="save.svg"/>
-            <controls:UiNavButton Grid.Column="5" Title="Cancel" Source="cancel.svg" Margin="10,0,5,0"/>
+            <controls:UiNavButton Grid.Column="5" Tapped="onClick_Cancel" Title="Cancel" Source="cancel.svg" Margin="10,0,5,0"/>
         </Grid>
     </Grid>
 </ContentPage>

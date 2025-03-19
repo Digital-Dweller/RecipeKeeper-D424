@@ -1056,19 +1056,8 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\mauiimage.inputs
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\mauifont.inputs
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\mauisplash.inputs
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\sp\drawable-hdpi\splash.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\sp\drawable-mdpi\splash.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\sp\drawable-xhdpi\splash.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\sp\drawable-xxhdpi\splash.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\sp\drawable-xxxhdpi\splash.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\sp\drawable\maui_splash_image.xml
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\sp\values\maui_colors.xml
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\mauisplash.stamp
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\mauifont.stamp
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\f\FluentUI.cs
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\f\OpenSans-Regular.ttf
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\f\OpenSans-Semibold.ttf
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\add.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\cancel.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\create.png
@@ -1077,6 +1066,7 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\favorites_empty.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\favorites_emptyblack.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\favorites_filled.png
+C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\food.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\home.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\logout.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\photo.png
@@ -1094,6 +1084,7 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\favorites_empty.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\favorites_emptyblack.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\favorites_filled.png
+C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\food.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\home.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\logout.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\photo.png
@@ -1111,6 +1102,7 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\favorites_empty.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\favorites_emptyblack.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\favorites_filled.png
+C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\food.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\home.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\logout.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\photo.png
@@ -1128,6 +1120,7 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\favorites_empty.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\favorites_emptyblack.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\favorites_filled.png
+C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\food.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\home.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\logout.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\photo.png
@@ -1145,6 +1138,7 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\favorites_empty.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\favorites_emptyblack.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\favorites_filled.png
+C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\food.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\home.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\logout.png
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\photo.png
@@ -1184,7 +1178,6 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\case_map.txt
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\__Microsoft.Android.Resource.Designer.cs
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\res.flag
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\6CD7C47F03026257-files.cache
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\B81013EDA07D2EB8-files.cache
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\lp\98\jl\files.cache
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\lp\99\jl\files.cache
@@ -2053,9 +2046,6 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\android\src\mono\com\google\android\material\textfield\TextInputLayout_OnEndIconChangedListenerImplementor.java
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\android\src\mono\MonoPackageManager_Resources.java
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\assets\AboutAssets.txt
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\assets\FluentUI.cs
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\assets\OpenSans-Regular.ttf
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\assets\OpenSans-Semibold.ttf
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\android\bin\packaged_resources
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\android\src\com\companyname\recipekeeper\R.java
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\_CompileJava.FileList.txt
@@ -2076,8 +2066,3 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-hdpi\food.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-mdpi\food.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xhdpi\food.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxhdpi\food.png
-C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Debug\net9.0-android\resizetizer\r\drawable-xxxhdpi\food.png
