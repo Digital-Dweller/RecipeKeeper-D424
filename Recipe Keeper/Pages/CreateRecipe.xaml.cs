@@ -30,6 +30,7 @@ public partial class CreateRecipe : ContentPage
         RecipeIngredients = new List<dbIngredient>();
         RecipeDirections = new List<dbDirection>();
         this.databaseService = databaseService;
+        input_Category.IsEnabled = true;
         BindingContext = this;
     }
 

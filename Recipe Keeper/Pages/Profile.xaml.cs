@@ -59,14 +59,19 @@ public partial class Profile : ContentPage
         {
             if (username.InputValue != string.Empty || usernamePassword.InputValue != string.Empty)
             {
-                bool validLogin = await databaseService.UserLogin(userSession.username, usernamePassword.InputValue);
-                if (validLogin)
+                bool isUser = await databaseService.IsUser(username.InputValue);
+                if (userSession.username != username.InputValue && !isUser)
                 {
-                    await databaseService.UpdateUsername(userSession.id, username.InputValue);
-                    await DisplayAlert("Update Success", "The username was updated successfully.", "Confirm");
-                    ClearAllFields();
+                    bool validLogin = await databaseService.UserLogin(userSession.username, usernamePassword.InputValue);
+                    if (validLogin)
+                    {
+                        await databaseService.UpdateUsername(userSession.id, username.InputValue);
+                        await DisplayAlert("Update Success", "The username was updated successfully.", "Confirm");
+                        ClearAllFields();
+                    }
+                    else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
                 }
-                else { await DisplayAlert("Login Error", "The credentials provided were invalid.", "Confirm"); }
+                else { await DisplayAlert("Username Error", $"A user with the username: {username.InputValue} already exists.", "Confirm"); }                
             }
             else { await DisplayAlert("Input Error", "Incomplete information. Make sure to complete username and password fields to update the username.", "Confirm"); }
         }
