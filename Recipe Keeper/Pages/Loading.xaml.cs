@@ -36,7 +36,7 @@ public partial class Loading : ContentPage
         //await runTests.RunAllTests();
 
         //Check the logfile.
-        await logger.ReadLogs();
+        //await logger.ReadLogs();
 
 
         if (userRemembered != null)

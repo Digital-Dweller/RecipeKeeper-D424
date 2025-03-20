@@ -24,8 +24,8 @@ public partial class Login : ContentPage
     private async void onClick_NewUser(object sender, EventArgs e)
     {
         var createProfile_page = ServiceProvider.GetService<CreateProfile>();
-        await Navigation.PopToRootAsync();
         await Navigation.PushAsync(createProfile_page);
+
     }
 
 
