@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recipe_Keeper.Controls.NewDirection">
+    <VerticalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="Title: " VerticalOptions="End" Margin="10,0,0,5" FontSize="16"/>
+            <Entry x:Name="newDirectionTitle" TextColor="Black" MaxLength="24" Placeholder="Title..." Margin="0,0,0,-5" WidthRequest="150"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Border Margin="10,0,5,10">
+                <Editor x:Name="newDirectionDescription" TextColor="Black" HeightRequest="100" WidthRequest="260" Placeholder="Description..." Background="White"/>
+            </Border>
+            <ImageButton Command="{Binding saveBinding}" Grid.Column="7" Source="save.svg" VerticalOptions="Center" Margin="0,10,0,0"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentView>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recipe_Keeper.Pages.Search"
+             xmlns:controls="clr-namespace:Recipe_Keeper.Controls"
+             NavigationPage.HasNavigationBar="False">
+    
+    <Grid BackgroundColor="#B5D8B3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid 
+            Grid.Row="0">
+            <Label
+                Text="Recipe Keeper"
+                FontSize="38"
+                FontAttributes="Bold"
+                TextColor="#9E3F41"
+                Margin="8,0,0,0"
+                VerticalOptions="Center"/>
+            <Image
+                Source="logo.png"
+                HorizontalOptions="End"
+                HeightRequest="65"
+                Margin="0,8,8,8"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <controls:NavIcon Grid.Row="0" Title="Favorites" Tapped="onClick_Favorites" imgSource="favorites_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="1" Title="Recipes" Tapped="onClick_Recipes" imgSource="recipes_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="2" Title="Create" Tapped="onClick_CreateRecipe" imgSource="create.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+            <controls:NavIcon Grid.Row="3" Title="Search" Tapped="onClick_Search" imgSource="search.svg" bgColor="#FDF9F3" edgeCoverWidth="4"/>
+            <controls:NavIcon Grid.Row="4" Title="Profile" Tapped="onClick_Profile" imgSource="profile_filled.svg" bgColor="#F0E4C7" edgeCoverWidth="0"/>
+
+            <Grid Grid.Column="1" Grid.RowSpan="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <BoxView 
+                    BackgroundColor="Black" 
+                    HeightRequest="3"
+                    Margin="-2,.5,0,0"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ScrollView BackgroundColor="#FDF9F3">
+                        <VerticalStackLayout>
+                            <Label Text="Search Recipes" TextColor="#9E3F41" FontSize="20" FontAttributes="Bold" Margin="10,20,0,0"/>
+                            <HorizontalStackLayout>
+                                <Border Stroke="Black" StrokeThickness="1" BackgroundColor="White" Margin="10,10,0,0">
+                                    <Entry x:Name="searchInput" Placeholder="Search..." HeightRequest="50" WidthRequest="220"/>
+                                </Border>
+                                <ImageButton Source="search.svg" HeightRequest="50" WidthRequest="50" Clicked="onClick_SearchRecipes"/>
+                            </HorizontalStackLayout>
+                            <VerticalStackLayout x:Name="contentSection" Margin="10,10,10,0"/>
+                        </VerticalStackLayout>
+                    </ScrollView>
+                    <BoxView 
+                        Grid.Column="1" 
+                        BackgroundColor="Black" 
+                        WidthRequest="5"
+                        Margin="0,0,0,0"/>
+                </Grid>
+                <BoxView 
+                    Grid.Row="2" 
+                    BackgroundColor="Black" 
+                    HeightRequest="3"
+                    Margin="-2,0,0,.5"/>            
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <controls:UiNavButton x:Name="logoutButton" Tapped="onClick_Logout" Grid.Column="0" Title="Logout" Source="logout.svg" HorizontalOptions="Start" Margin="5,0,0,0"/>
+            <controls:UiNavButton x:Name="HomeButton" Tapped="onClick_Favorites" Grid.Column="2" Title="Home" Source="home.svg" Margin="-68,0,0,0"/>
+        </Grid>
+    </Grid>
+</ContentPage>

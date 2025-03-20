@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recipe_Keeper.Pages.CreateProfile"
+             xmlns:controls="clr-namespace:Recipe_Keeper.Controls"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid 
+            Grid.Row="0"
+            BackgroundColor="#B5D8B3">
+            <Label
+                Text="Recipe Keeper"
+                FontSize="38"
+                FontAttributes="Bold"
+                TextColor="#9E3F41"
+                Margin="8,0,0,0"
+                VerticalOptions="Center"/>
+            <Image
+                Source="logo.png"
+                HorizontalOptions="End"
+                HeightRequest="65"
+                Margin="0,8,8,8"/>
+        </Grid>
+        <VerticalStackLayout 
+            Grid.Row="1"
+            BackgroundColor="#FDF9F3">
+            <Label
+                Text="Create Profile"
+                FontSize="26"
+                FontAttributes="Bold"
+                TextColor="#9E3F41"
+                HorizontalOptions="Center"
+                Margin="0,50,0,8"/>
+            <controls:TextInput Title="Username" Placeholder="Username..." x:Name="input_Username"/>
+            <controls:TextInput Title="Password" Placeholder="Password..." x:Name="input_Pass"/>
+            <controls:TextInput Title="Confirm Password" Placeholder="Password..." x:Name="input_ConfirmPass"/>
+            <controls:TextInput Title="Email" Placeholder="Email..." x:Name="input_Email"/>
+            <Grid HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button 
+                    Text="Create"
+                    Clicked="onClick_Create"
+                    FontSize="18"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    WidthRequest="120"
+                    BorderWidth="1"
+                    BorderColor="Black"
+                    Margin="0,16,20,8"/>
+                <Button 
+                    Text="Cancel"
+                    Clicked="onClick_Cancel"
+                    FontSize="18"
+                    TextColor="Black"
+                    Grid.Column="1"
+                    BackgroundColor="White"
+                    WidthRequest="120"
+                    BorderWidth="1"
+                    BorderColor="Black"
+                    Margin="20,16,0,8"/>
+            </Grid>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
