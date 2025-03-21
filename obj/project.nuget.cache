@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "r1C9RKO5ar4=",
+  "dgSpecHash": "1GHPC3U2owM=",
   "success": true,
   "projectFilePath": "C:\\Users\\alexh\\source\\repos\\d424-software-engineering-capstone\\Recipe Keeper\\Recipe Keeper.csproj",
   "expectedPackageFiles": [
@@ -129,11 +129,7 @@
     "C:\\Users\\alexh\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.9.0.2\\xamarin.kotlinx.coroutines.core.jvm.1.9.0.2.nupkg.sha512",
     "C:\\Users\\alexh\\.nuget\\packages\\xamarin.kotlinx.serialization.core\\1.7.3.2\\xamarin.kotlinx.serialization.core.1.7.3.2.nupkg.sha512",
     "C:\\Users\\alexh\\.nuget\\packages\\xamarin.kotlinx.serialization.core.jvm\\1.7.3.2\\xamarin.kotlinx.serialization.core.jvm.1.7.3.2.nupkg.sha512",
-    "C:\\Users\\alexh\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\9.0.1\\microsoft.netcore.app.crossgen2.win-x64.9.0.1.nupkg.sha512",
-    "C:\\Users\\alexh\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512",
-    "C:\\Users\\alexh\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.1\\microsoft.aspnetcore.app.runtime.win-x64.9.0.1.nupkg.sha512",
-    "C:\\Users\\alexh\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.1.nupkg.sha512",
-    "C:\\Users\\alexh\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.1\\microsoft.netcore.app.runtime.win-x64.9.0.1.nupkg.sha512"
+    "C:\\Users\\alexh\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
   ],
   "logs": []
 }
