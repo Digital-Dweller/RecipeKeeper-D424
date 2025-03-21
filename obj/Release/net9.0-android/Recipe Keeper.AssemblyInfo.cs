@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Recipe Keeper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5aa26f50958df7f2f8c6db911b0ecd2e94dc059e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Recipe Keeper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Recipe Keeper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

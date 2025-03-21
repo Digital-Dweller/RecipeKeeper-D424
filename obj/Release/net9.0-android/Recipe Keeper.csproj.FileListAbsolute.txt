@@ -542,3 +542,4 @@ C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Release\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Release\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Release\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\alexh\source\repos\d424-software-engineering-capstone\Recipe Keeper\obj\Release\net9.0-android\Recipe Keeper.sourcelink.json

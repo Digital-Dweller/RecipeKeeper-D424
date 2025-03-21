@@ -5,7 +5,7 @@
              x:Class="Recipe_Keeper.App">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary x:Class="YourAppNamespace.Styles">
+            <ResourceDictionary>
                 <Color x:Key="PrimaryTextColor">Black</Color>
             </ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
