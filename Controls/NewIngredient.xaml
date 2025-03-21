@@ -35,7 +35,7 @@
         <VerticalStackLayout Grid.Column="5">
             <Label Text="Ingredient" HorizontalOptions="Center"/>
             <Border Stroke="Black" StrokeThickness="2" BackgroundColor="White">
-                <Entry x:Name="ingredient" FontSize="16" TextColor="Black" WidthRequest="160" MaxLength="16"/>
+                <Entry x:Name="ingredient" FontSize="16" TextColor="Black" WidthRequest="140" MaxLength="16"/>
             </Border>
         </VerticalStackLayout>
         <ImageButton Command="{Binding saveBinding}" Grid.Column="7" Source="save.svg" VerticalOptions="Center" Margin="0,10,0,0"/>

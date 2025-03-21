@@ -22,7 +22,7 @@
                 TextColor="Black"
                 x:Name="innerEntry"
                 FontSize="24"
-                MaxLength="20"
+                MaxLength="32"
                 Margin="10,0,0,0">
                 <Entry.Behaviors>
                     <behaviors:TextInputBehavior/>
