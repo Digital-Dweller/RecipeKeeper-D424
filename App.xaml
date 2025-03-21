@@ -23,6 +23,9 @@
             <Style TargetType="CheckBox">
                 <Setter Property="Color" Value="Black" />
             </Style>
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

@@ -9,7 +9,7 @@
         </HorizontalStackLayout>
         <HorizontalStackLayout>
             <Border Margin="10,0,5,10">
-                <Editor x:Name="newDirectionDescription" TextColor="Black" HeightRequest="100" WidthRequest="260" Placeholder="Description..." Background="White"/>
+                <Editor x:Name="newDirectionDescription" TextColor="Black" HeightRequest="100" WidthRequest="220" Placeholder="Description..." Background="White"/>
             </Border>
             <ImageButton Command="{Binding saveBinding}" Grid.Column="7" Source="save.svg" VerticalOptions="Center" Margin="0,10,0,0"/>
         </HorizontalStackLayout>

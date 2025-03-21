@@ -5,7 +5,7 @@
     <VerticalStackLayout Margin="10,0,10,5">
         <Label x:Name="direction_Title" Text="{Binding directionTitle}"/>
         <HorizontalStackLayout>
-            <Border WidthRequest="265">
+            <Border WidthRequest="230">
                 <Label x:Name="direction_Description" Text="{Binding directionDescription}" BackgroundColor="White" Margin="5,5,5,5"/>
             </Border>
             <ImageButton Source="delete.svg" Command="{Binding deleteBinding}" Margin="5,0,0,0"/>

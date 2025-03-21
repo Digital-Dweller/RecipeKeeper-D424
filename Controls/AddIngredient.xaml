@@ -17,19 +17,19 @@
 
         <VerticalStackLayout Grid.Column="1">
             <Label Text="Qty"/>
-            <Border Stroke="Black" StrokeThickness="2" BackgroundColor="White" WidthRequest="44" HeightRequest="44">
+            <Border Stroke="Black" StrokeThickness="2" BackgroundColor="White" WidthRequest="44" HeightRequest="50">
                 <Label x:Name="qty" Text="{Binding qtyText}" VerticalOptions="Center" HorizontalOptions="Center"/>
             </Border>
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Column="3">
             <Label Text="Unit" VerticalOptions="End"/>
-            <Border Stroke="Black" StrokeThickness="2" BackgroundColor="White" WidthRequest="50" HeightRequest="44">
+            <Border Stroke="Black" StrokeThickness="2" BackgroundColor="White" WidthRequest="50" HeightRequest="50">
                 <Label x:Name="unit" Text="{Binding unitText}" VerticalOptions="Center" HorizontalOptions="Center"/>
             </Border>
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Column="5">
             <Label Text="Ingredient" VerticalOptions="End"/>
-            <Border Stroke="Black" StrokeThickness="2" BackgroundColor="White" WidthRequest="160" HeightRequest="44">
+            <Border Stroke="Black" StrokeThickness="2" BackgroundColor="White" WidthRequest="140" HeightRequest="50">
                 <Label x:Name="ingredient" Text="{Binding ingredientText}" FontSize="16" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
             </Border>
         </VerticalStackLayout>

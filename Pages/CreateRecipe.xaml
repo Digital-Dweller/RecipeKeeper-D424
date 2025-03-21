@@ -92,7 +92,7 @@
                                     </Border.StrokeShape>
                                     <VerticalStackLayout>
                                         <Label Text="Category" FontSize="16" TextColor="#9E3F41" Margin="10,3,0,0"/>
-                                        <Picker Title="Select Category" x:Name="input_Category" FontSize="22" ItemsSource="{Binding categoriesList}" Margin="10,0,0,0"/>
+                                        <Picker Title="Select Category" x:Name="input_Category" TitleColor="DarkGray" FontSize="22" ItemsSource="{Binding categoriesList}" Margin="10,0,0,0"/>
                                     </VerticalStackLayout>
                                 </Border>
                                 <Border Stroke="Black" StrokeThickness="2" Margin="20,20,20,0" BackgroundColor="White">
